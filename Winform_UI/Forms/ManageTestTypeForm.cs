@@ -48,7 +48,7 @@ namespace Winform_UI.Forms
                     );
             }
         }
-        private void LoadApplicationTypes()
+        private void LoadTestTypes()
         {
             LoadApplicationsTypes(TestTypeManager.GetAllTestTypes());
         }
@@ -60,8 +60,15 @@ namespace Winform_UI.Forms
         private void ManageTestTypeForm_Load(object sender, EventArgs e)
         {
             InitColumns();
-            LoadApplicationTypes();
+            LoadTestTypes();
             UpdateCountLabel();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int selectedId = (int)dgvTestTypes.CurrentRow.Cells[0].Value;
+            new UpdateTestTypeForm(selectedId).ShowDialog();
+            LoadTestTypes();
         }
     }
 }

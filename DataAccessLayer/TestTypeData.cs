@@ -28,7 +28,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@TestTypeTitle", type.TestTypeTitle);
             command.Parameters.AddWithValue("@TestTypeDescription", type.TestTypeDescription);
             command.Parameters.AddWithValue("@TestTypeFees", type.TestTypeFees);
-            command.Parameters.AddWithValue("@ApplicationTypeId", type.TestTypeID);
+            command.Parameters.AddWithValue("@TestTypeId", type.TestTypeID);
 
 
             try
