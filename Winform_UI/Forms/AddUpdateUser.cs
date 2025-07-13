@@ -37,7 +37,7 @@ namespace Winform_UI.Forms
                 this.Text = "Update";
                 User user = UserManager.GetUserById((int)currentUserId);
                 userChoosePerson1.LoadPerson(user.PersonId);
-                userChoosePerson1.HideFilters();
+                userChoosePerson1.DisableFilters();
                 this.labelUserId.Text = this.currentUserId.ToString();
                 cbIsActive.Checked = user.IsActive;
                 tbUsername.Text = user.UserName;

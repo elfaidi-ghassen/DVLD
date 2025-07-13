@@ -94,9 +94,9 @@ namespace Winform_UI.Controls
         {
 
         }
-        public void HideFilters()
+        public void DisableFilters()
         {
-            filterGroup.Hide();
+            filterGroup.Enabled = false;
         }
     }
 }
