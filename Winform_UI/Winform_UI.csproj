@@ -114,6 +114,12 @@
     <Compile Include="Forms\ManagePeopleForm.Designer.cs">
       <DependentUpon>ManagePeopleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageTestTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageTestTypeForm.Designer.cs">
+      <DependentUpon>ManageTestTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ManageUsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManagePeopleForm.resx">
       <DependentUpon>ManagePeopleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageTestTypeForm.resx">
+      <DependentUpon>ManageTestTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageUsersForm.resx">
       <DependentUpon>ManageUsersForm.cs</DependentUpon>
