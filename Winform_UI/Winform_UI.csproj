@@ -232,6 +232,10 @@
       <Project>{96a7c786-6b74-4bbf-a49d-177057786461}</Project>
       <Name>DVLDBusinessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{7f1049bf-c047-4fca-9494-4a5c8bc91514}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\male.png" />
