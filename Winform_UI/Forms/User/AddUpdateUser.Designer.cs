@@ -32,6 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.userChoosePerson1 = new Winform_UI.Controls.UserChoosePerson();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cbIsActive = new System.Windows.Forms.CheckBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -44,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.userChoosePerson1 = new Winform_UI.Controls.UserChoosePerson();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -98,6 +98,16 @@
             this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "Next";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // userChoosePerson1
+            // 
+            this.userChoosePerson1.BackColor = System.Drawing.Color.White;
+            this.userChoosePerson1.ChosenId = null;
+            this.userChoosePerson1.Location = new System.Drawing.Point(6, 3);
+            this.userChoosePerson1.Name = "userChoosePerson1";
+            this.userChoosePerson1.Size = new System.Drawing.Size(1017, 537);
+            this.userChoosePerson1.TabIndex = 0;
+            this.userChoosePerson1.Load += new System.EventHandler(this.userChoosePerson1_Load);
             // 
             // tabPage2
             // 
@@ -280,16 +290,6 @@
             this.label1.Size = new System.Drawing.Size(73, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "UserId:";
-            // 
-            // userChoosePerson1
-            // 
-            this.userChoosePerson1.BackColor = System.Drawing.Color.White;
-            this.userChoosePerson1.ChosenId = null;
-            this.userChoosePerson1.Location = new System.Drawing.Point(6, 3);
-            this.userChoosePerson1.Name = "userChoosePerson1";
-            this.userChoosePerson1.Size = new System.Drawing.Size(1017, 537);
-            this.userChoosePerson1.TabIndex = 0;
-            this.userChoosePerson1.Load += new System.EventHandler(this.userChoosePerson1_Load);
             // 
             // AddUpdateUser
             // 

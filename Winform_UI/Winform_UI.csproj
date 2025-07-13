@@ -72,16 +72,22 @@
     <Compile Include="Controls\UserChoosePerson.Designer.cs">
       <DependentUpon>UserChoosePerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddUpdateUser.cs">
+    <Compile Include="Forms\DrivingLicense\DrivingLicenseApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddUpdateUser.Designer.cs">
+    <Compile Include="Forms\DrivingLicense\DrivingLicenseApplicationForm.Designer.cs">
+      <DependentUpon>DrivingLicenseApplicationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\AddUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\AddUpdateUser.Designer.cs">
       <DependentUpon>AddUpdateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddUpdatePerson.cs">
+    <Compile Include="Forms\Person\AddUpdatePerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddUpdatePerson.Designer.cs">
+    <Compile Include="Forms\Person\AddUpdatePerson.Designer.cs">
       <DependentUpon>AddUpdatePerson.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ApplicationTypesForm.cs">
@@ -108,10 +114,10 @@
     <Compile Include="Forms\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ManagePeopleForm.cs">
+    <Compile Include="Forms\Person\ManagePeopleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ManagePeopleForm.Designer.cs">
+    <Compile Include="Forms\Person\ManagePeopleForm.Designer.cs">
       <DependentUpon>ManagePeopleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ManageTestTypeForm.cs">
@@ -120,16 +126,16 @@
     <Compile Include="Forms\ManageTestTypeForm.Designer.cs">
       <DependentUpon>ManageTestTypeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ManageUsersForm.cs">
+    <Compile Include="Forms\User\ManageUsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ManageUsersForm.Designer.cs">
+    <Compile Include="Forms\User\ManageUsersForm.Designer.cs">
       <DependentUpon>ManageUsersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PersonInfoForm.cs">
+    <Compile Include="Forms\Person\PersonInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PersonInfoForm.Designer.cs">
+    <Compile Include="Forms\Person\PersonInfoForm.Designer.cs">
       <DependentUpon>PersonInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UpdateApplicationTypeForm.cs">
@@ -138,10 +144,10 @@
     <Compile Include="Forms\UpdateApplicationTypeForm.Designer.cs">
       <DependentUpon>UpdateApplicationTypeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserDetails.cs">
+    <Compile Include="Forms\User\UserDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UserDetails.Designer.cs">
+    <Compile Include="Forms\User\UserDetails.Designer.cs">
       <DependentUpon>UserDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -161,10 +167,13 @@
     <EmbeddedResource Include="Controls\UserChoosePerson.resx">
       <DependentUpon>UserChoosePerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddUpdatePerson.resx">
+    <EmbeddedResource Include="Forms\DrivingLicense\DrivingLicenseApplicationForm.resx">
+      <DependentUpon>DrivingLicenseApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Person\AddUpdatePerson.resx">
       <DependentUpon>AddUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddUpdateUser.resx">
+    <EmbeddedResource Include="Forms\User\AddUpdateUser.resx">
       <DependentUpon>AddUpdateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationTypesForm.resx">
@@ -179,22 +188,22 @@
     <EmbeddedResource Include="Forms\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ManagePeopleForm.resx">
+    <EmbeddedResource Include="Forms\Person\ManagePeopleForm.resx">
       <DependentUpon>ManagePeopleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageTestTypeForm.resx">
       <DependentUpon>ManageTestTypeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ManageUsersForm.resx">
+    <EmbeddedResource Include="Forms\User\ManageUsersForm.resx">
       <DependentUpon>ManageUsersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PersonInfoForm.resx">
+    <EmbeddedResource Include="Forms\Person\PersonInfoForm.resx">
       <DependentUpon>PersonInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateApplicationTypeForm.resx">
       <DependentUpon>UpdateApplicationTypeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserDetails.resx">
+    <EmbeddedResource Include="Forms\User\UserDetails.resx">
       <DependentUpon>UserDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -261,5 +270,6 @@
   <ItemGroup>
     <None Include="Resources\female.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Winform_UI.Forms;
+using Winform_UI.Forms.DrivingLicense;
 
 namespace Winform_UI
 {
@@ -56,6 +57,21 @@ namespace Winform_UI
         private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new ManageTestTypeForm().Show();
+        }
+
+
+        private void ShowDrivingLicenseApplicationForm()
+        {
+            new DrivingLicenseApplicationForm().Show();
+        }
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowDrivingLicenseApplicationForm();
+        }
+
+        private void localLicenseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ShowDrivingLicenseApplicationForm();
         }
     }
 }
