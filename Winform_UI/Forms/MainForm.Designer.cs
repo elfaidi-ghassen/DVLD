@@ -30,12 +30,13 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageApplicationTypsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageApplicationTypsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageTestTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,12 +62,20 @@
             // applicationsToolStripMenuItem
             // 
             this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manageApplicationTypsToolStripMenuItem});
+            this.manageApplicationTypsToolStripMenuItem,
+            this.manageTestTypesToolStripMenuItem});
             this.applicationsToolStripMenuItem.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.applicationsToolStripMenuItem.Image = global::Winform_UI.Properties.Resources.papers;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(233, 73);
             this.applicationsToolStripMenuItem.Text = "Applications";
+            // 
+            // manageApplicationTypsToolStripMenuItem
+            // 
+            this.manageApplicationTypsToolStripMenuItem.Name = "manageApplicationTypsToolStripMenuItem";
+            this.manageApplicationTypsToolStripMenuItem.Size = new System.Drawing.Size(433, 42);
+            this.manageApplicationTypsToolStripMenuItem.Text = "Manage Application Types";
+            this.manageApplicationTypsToolStripMenuItem.Click += new System.EventHandler(this.manageApplicationTypsToolStripMenuItem_Click);
             // 
             // peopleToolStripMenuItem
             // 
@@ -108,16 +117,16 @@
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(270, 42);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(212, 42);
             this.logToolStripMenuItem.Text = "Log out";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
             // 
-            // manageApplicationTypsToolStripMenuItem
+            // manageTestTypesToolStripMenuItem
             // 
-            this.manageApplicationTypsToolStripMenuItem.Name = "manageApplicationTypsToolStripMenuItem";
-            this.manageApplicationTypsToolStripMenuItem.Size = new System.Drawing.Size(433, 42);
-            this.manageApplicationTypsToolStripMenuItem.Text = "Manage Application Types";
-            this.manageApplicationTypsToolStripMenuItem.Click += new System.EventHandler(this.manageApplicationTypsToolStripMenuItem_Click);
+            this.manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
+            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(433, 42);
+            this.manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
+            this.manageTestTypesToolStripMenuItem.Click += new System.EventHandler(this.manageTestTypesToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -144,5 +153,6 @@
         private System.Windows.Forms.ToolStripMenuItem accountSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageApplicationTypsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageTestTypesToolStripMenuItem;
     }
 }

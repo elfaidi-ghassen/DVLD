@@ -76,5 +76,10 @@ namespace Winform_UI.Forms
         {
 
         }
+
+        private void rowCountLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

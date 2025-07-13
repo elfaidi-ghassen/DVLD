@@ -50,7 +50,12 @@ namespace Winform_UI
 
         private void manageApplicationTypsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ApplicationTypesForm().ShowDialog();
+            new ApplicationTypesForm().Show();
+        }
+
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ManageTestTypeForm().Show();
         }
     }
 }
