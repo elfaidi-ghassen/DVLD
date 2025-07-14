@@ -11,6 +11,7 @@ using Util;
 
 namespace DataAccessLayer
 {
+
     public class ApplicationTypesData 
     {
         public static bool Update(ApplicationType type)

@@ -62,7 +62,7 @@ namespace Winform_UI
 
         private void ShowDrivingLicenseApplicationForm()
         {
-            new DrivingLicenseApplicationForm().Show();
+            new DrivingLicenseApplicationForm(UserId).Show();
         }
         private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -71,7 +71,7 @@ namespace Winform_UI
 
         private void localLicenseToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ShowDrivingLicenseApplicationForm();
+            
         }
     }
 }

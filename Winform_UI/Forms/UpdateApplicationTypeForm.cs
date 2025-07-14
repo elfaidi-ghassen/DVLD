@@ -54,7 +54,7 @@ namespace Winform_UI.Forms
             type.ApplicationFees = Convert.ToDecimal(tbFees.Text);
             if(ApplicationTypeManager.Update(type))
             {
-                MessageBox.Show("Updated Succesfully", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Updated Succesfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             } else
             {

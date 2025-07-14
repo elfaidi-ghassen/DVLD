@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,7 @@ namespace DVLVBusinessLayer
             return RowToApplicationType(
                 ApplicationTypesData.GetApplicationTypeById(id));
         }
+
         public static List<ApplicationType> GetAllApplicationsTypes()
         {
             List<ApplicationType> typesList = new List<ApplicationType>();

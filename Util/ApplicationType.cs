@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Models
 {
+    public enum enApplicationType
+    {
+        NewDrivingLicenseService = 1
+    }   
     public class ApplicationType
     {
         public int ApplicationTypeID { get; set; }

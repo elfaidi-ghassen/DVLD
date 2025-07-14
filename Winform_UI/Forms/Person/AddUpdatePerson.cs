@@ -68,6 +68,7 @@ namespace Winform_UI.Forms
             catch(Exception e) { }
             InitializeCountries();
             string countryName = CountryManager.FindCountryById(person.NationalityCountryID).CountryName;
+            
             comboCountry.SelectedIndex = comboCountry.FindString(countryName);
             if (person.ImagePath == null)
                 linkSetImage.Text = "Set image";
