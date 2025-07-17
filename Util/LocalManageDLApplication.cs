@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Util.DVLVBusinessLayer;
 
 namespace Util
 {
@@ -24,6 +25,18 @@ namespace Util
             ApplicationDate = applicationDate;
             PassedTests = passedTests;
             Status = status;
+        }
+        public bool IsNew
+        {
+            get {
+                return this.Status == (int)enApplicationStatus.New;
+            }
+        }
+        public bool IsCompleted
+        {
+            get {
+                return this.Status == (int)enApplicationStatus.Completed;
+            }
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.applicationInfo1 = new Winform_UI.Controls.ApplicationInfo();
+            this.drivingLicenseApplicationForm1 = new Winform_UI.Controls.DrivingLicenseApplicationForm();
             this.SuspendLayout();
             // 
             // applicationInfo1
@@ -40,11 +41,20 @@
             this.applicationInfo1.TabIndex = 0;
             this.applicationInfo1.Load += new System.EventHandler(this.applicationInfo1_Load);
             // 
+            // drivingLicenseApplicationForm1
+            // 
+            this.drivingLicenseApplicationForm1.Location = new System.Drawing.Point(12, 363);
+            this.drivingLicenseApplicationForm1.Name = "drivingLicenseApplicationForm1";
+            this.drivingLicenseApplicationForm1.Size = new System.Drawing.Size(949, 201);
+            this.drivingLicenseApplicationForm1.TabIndex = 1;
+            this.drivingLicenseApplicationForm1.Load += new System.EventHandler(this.drivingLicenseApplicationForm1_Load);
+            // 
             // ViewLocalDrivingLicenseApplicatiionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 599);
+            this.ClientSize = new System.Drawing.Size(967, 570);
+            this.Controls.Add(this.drivingLicenseApplicationForm1);
             this.Controls.Add(this.applicationInfo1);
             this.Name = "ViewLocalDrivingLicenseApplicatiionForm";
             this.Text = "ViewLocalDrivingLicenseApplicatiionForm";
@@ -56,5 +66,6 @@
         #endregion
 
         private Controls.ApplicationInfo applicationInfo1;
+        private Controls.DrivingLicenseApplicationForm drivingLicenseApplicationForm1;
     }
 }

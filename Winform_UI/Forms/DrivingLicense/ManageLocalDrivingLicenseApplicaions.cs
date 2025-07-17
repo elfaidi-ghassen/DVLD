@@ -238,5 +238,70 @@ namespace Winform_UI.Forms.DrivingLicense
             new ViewLocalDrivingLicenseApplicatiionForm(selectedId)
                 .ShowDialog();
         }
+
+        private void DisableAllTests()
+        {
+            visionTestToolStripMenuItem.Enabled = false;
+            theoryTestToolStripMenuItem.Enabled = false;
+            practicalTestToolStripMenuItem.Enabled = false;
+
+        }
+        private void EnableTest(int index)
+        {
+            new List<ToolStripMenuItem>() {
+                visionTestToolStripMenuItem,
+                theoryTestToolStripMenuItem,
+                practicalTestToolStripMenuItem
+            }[index].Enabled = true;
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            int selectedId = (int)dgvData.CurrentRow.Cells[0].Value;
+            LocalManageDLApplication application = LocalDLApplicationManager
+                        .GetApplicatioByLocalId(selectedId);
+
+            // Can't cancel if it's already canceled or completed (i.e. not New)
+            bool IssuedBefore = true;
+           cancelApplicationToolStripMenuItem.Enabled = application.IsNew;
+           issueDrivingLicensefirstTimeToolStripMenuItem.Enabled
+                 = application.IsCompleted && !IssuedBefore;
+           showLicenseToolStripMenuItem.Enabled = IssuedBefore;
+            DisableAllTests();
+            if (application.PassedTests < 3)
+            {
+                EnableTest(application.PassedTests);
+            } else
+            {
+                scheduleTestToolStripMenuItem.Enabled = false;
+            }
+            
+
+
+        }
+
+        private void deleteApplicatioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            int selectedId = (int)dgvData.CurrentRow.Cells[0].Value;
+            if (MessageBox.Show("Are you sure you want to delete?", "caution",
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+            {
+                return;
+            }
+            if (LocalDLApplicationManager.DeleteEntireApplication(selectedId))
+            {
+                MessageBox.Show("Deleted Successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadApplications();
+            }
+
+            else
+            {
+                MessageBox.Show("Error while deleting", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
+        }
     }
 }

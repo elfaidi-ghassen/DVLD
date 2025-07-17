@@ -11,6 +11,13 @@ namespace DVLVBusinessLayer
     public class LocalDLApplicationManager
     {
 
+        // Delete both the local driving application and the related application
+        public static bool DeleteEntireApplication(int localAppId)
+        {
+            int appId = GetApplicationIdByLocalId(localAppId);
+            return LocalDLApplicationData.DeleteEntireApplication(localAppId, appId);
+        }
+
 
         public static int GetApplicationIdByLocalId(int localAppId)
         {

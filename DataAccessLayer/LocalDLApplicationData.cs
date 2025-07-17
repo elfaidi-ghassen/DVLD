@@ -13,6 +13,44 @@ namespace DataAccessLayer
     public class LocalDLApplicationData
     {
 
+        public static bool DeleteEntireApplication(int localAppId, int appId)
+        {
+            SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+            
+            string DELETE_DL_APP_QUERY = @"
+                    DELETE FROM [dbo].[LocalDrivingLicenseApplications]
+                    WHERE LocalDrivingLicenseApplicationID = @localAppId";
+            string DELETE_APP_QUERY = @"
+                    DELETE FROM [dbo].[Applications]
+                    WHERE ApplicationID = @appId;";
+            connection.Open();
+            SqlTransaction transaction = connection.BeginTransaction();
+            try
+            {
+
+                SqlCommand command1 = new SqlCommand(DELETE_DL_APP_QUERY, connection, transaction);
+                command1.Parameters.AddWithValue("@localAppId", localAppId);
+            
+                SqlCommand command2 = new SqlCommand(DELETE_APP_QUERY, connection, transaction);
+                command2.Parameters.AddWithValue("@appId", appId);
+
+                command1.ExecuteNonQuery();
+                command2.ExecuteNonQuery();
+                transaction.Commit();
+
+            }
+            catch (Exception e)
+            {
+                transaction.Rollback();
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return true;
+        }
+
         public static int GetApplicationIdByLocalId(int localAppId)
         {
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);
