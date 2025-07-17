@@ -16,7 +16,7 @@ namespace Winform_UI.Forms
     {
         All, Active, Locked
     }
-    enum FilterOption
+    enum UserFilterOption
     {
         None, UserID, PersonID, UserName, FullName, IsActive 
     }
@@ -28,44 +28,44 @@ namespace Winform_UI.Forms
             InitializeComponent();
         }
 
-        private string FilterOptionToString(FilterOption option)
+        private string FilterOptionToString(UserFilterOption option)
         {
             switch (option)
             {
-                case FilterOption.None:
+                case UserFilterOption.None:
                     return "None";
-                case FilterOption.UserID:
+                case UserFilterOption.UserID:
                     return "User ID";
-                case FilterOption.PersonID:
+                case UserFilterOption.PersonID:
                     return "Person ID";
-                case FilterOption.UserName:
+                case UserFilterOption.UserName:
                     return "User Name";
-                case FilterOption.FullName:
+                case UserFilterOption.FullName:
                     return "Full Name";
-                case FilterOption.IsActive:
+                case UserFilterOption.IsActive:
                     return "Is Active";
                 default:
                     return string.Empty;
             }
         }
-        private FilterOption StringToFilterOption(string optionString)
+        private UserFilterOption StringToFilterOption(string optionString)
         {
             switch (optionString.ToUpper())
             {
                 case "NONE":
-                    return FilterOption.None;
+                    return UserFilterOption.None;
                 case "USER ID":
-                    return FilterOption.UserID;
+                    return UserFilterOption.UserID;
                 case "PERSON ID":
-                    return FilterOption.PersonID;
+                    return UserFilterOption.PersonID;
                 case "USER NAME":
-                    return FilterOption.UserName;
+                    return UserFilterOption.UserName;
                 case "FULL NAME":
-                    return FilterOption.FullName;
+                    return UserFilterOption.FullName;
                 case "IS ACTIVE":
-                    return FilterOption.IsActive;
+                    return UserFilterOption.IsActive;
                 default:
-                    return FilterOption.None;
+                    return UserFilterOption.None;
             }
         }
         private void UpdateCountLabel()
@@ -102,7 +102,7 @@ namespace Winform_UI.Forms
        
         private void InitFiltersComboBox()
         {
-            foreach(FilterOption option in Enum.GetValues(typeof(FilterOption)))
+            foreach(UserFilterOption option in Enum.GetValues(typeof(UserFilterOption)))
             {
                 string displayText = FilterOptionToString(option);
                 filterCombo.Items.Add(displayText);
@@ -173,22 +173,22 @@ namespace Winform_UI.Forms
         {
             switch (StringToFilterOption(filterCombo.Text))
             {
-                case FilterOption.UserID:
-                case FilterOption.PersonID:
+                case UserFilterOption.UserID:
+                case UserFilterOption.PersonID:
                     HideAllFilterInputs();
                     filterNumber.Visible = true;
                     break;
 
-                case FilterOption.UserName:
-                case FilterOption.FullName:
+                case UserFilterOption.UserName:
+                case UserFilterOption.FullName:
                     HideAllFilterInputs();
                     filterTextBox.Visible = true;
                     break;
-                case FilterOption.IsActive:
+                case UserFilterOption.IsActive:
                     HideAllFilterInputs();
                     filterActiveCombo.Visible = true;
                     break;
-                case FilterOption.None:
+                case UserFilterOption.None:
                 default:
                     HideAllFilterInputs();
                     LoadUsers();
@@ -219,11 +219,11 @@ namespace Winform_UI.Forms
         private void filterNumber_ValueChanged(object sender, EventArgs e)
         {
 
-            if (StringToFilterOption(filterCombo.Text) == FilterOption.UserID)
+            if (StringToFilterOption(filterCombo.Text) == UserFilterOption.UserID)
                 LoadUsers(UserManager.GetAllUsers()
                     .Where(user => user.UserId == filterNumber.Value).ToList());
 
-            if (StringToFilterOption(filterCombo.Text) == FilterOption.PersonID)
+            if (StringToFilterOption(filterCombo.Text) == UserFilterOption.PersonID)
                 LoadUsers(UserManager.GetAllUsers()
                     .Where(user => user.PersonId == filterNumber.Value).ToList());
             UpdateCountLabel();
@@ -231,11 +231,11 @@ namespace Winform_UI.Forms
 
         private void filterTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (StringToFilterOption(filterCombo.Text) == FilterOption.UserName)
+            if (StringToFilterOption(filterCombo.Text) == UserFilterOption.UserName)
                 LoadUsers(UserManager.GetAllUsers()
                     .Where(user => user.UserName.Contains(filterTextBox.Text)).ToList());
 
-            if (StringToFilterOption(filterCombo.Text) == FilterOption.FullName)
+            if (StringToFilterOption(filterCombo.Text) == UserFilterOption.FullName)
                 LoadUsers(UserManager.GetAllUsers()
                     .Where(user => PersonManager.GetPersonById(user.PersonId)
                                             .FullName.Contains(filterTextBox.Text))

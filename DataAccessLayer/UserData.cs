@@ -155,7 +155,6 @@ namespace DataAccessLayer
         }
         public static int? GetUserId(string username, string password)
         {
-            DataTable dataTable = new DataTable();
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);
             string QUERY = @"
                         SELECT [UserID]

@@ -12,6 +12,7 @@ namespace Util
     {
         public enum enApplicationStatus
         {
+            None = 0,
             New = 1,
             Canceled = 2,
             Completed = 3

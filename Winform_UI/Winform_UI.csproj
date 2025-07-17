@@ -54,6 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ApplicationInfo.Designer.cs">
+      <DependentUpon>ApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DrivingLicenseApplicationForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DrivingLicenseApplicationForm.Designer.cs">
+      <DependentUpon>DrivingLicenseApplicationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LoginInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -77,6 +89,18 @@
     </Compile>
     <Compile Include="Forms\DrivingLicense\DrivingLicenseApplicationForm.Designer.cs">
       <DependentUpon>DrivingLicenseApplicationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DrivingLicense\ManageLocalDrivingLicenseApplicaions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DrivingLicense\ManageLocalDrivingLicenseApplicaions.Designer.cs">
+      <DependentUpon>ManageLocalDrivingLicenseApplicaions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DrivingLicense\ViewLocalDrivingLicenseApplicatiionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DrivingLicense\ViewLocalDrivingLicenseApplicatiionForm.Designer.cs">
+      <DependentUpon>ViewLocalDrivingLicenseApplicatiionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\User\AddUpdateUser.cs">
       <SubType>Form</SubType>
@@ -158,6 +182,12 @@
     <Compile Include="UpdateTestTypeForm.Designer.cs">
       <DependentUpon>UpdateTestTypeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\ApplicationInfo.resx">
+      <DependentUpon>ApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DrivingLicenseApplicationForm.resx">
+      <DependentUpon>DrivingLicenseApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\LoginInfo.resx">
       <DependentUpon>LoginInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +199,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrivingLicense\DrivingLicenseApplicationForm.resx">
       <DependentUpon>DrivingLicenseApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DrivingLicense\ManageLocalDrivingLicenseApplicaions.resx">
+      <DependentUpon>ManageLocalDrivingLicenseApplicaions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DrivingLicense\ViewLocalDrivingLicenseApplicatiionForm.resx">
+      <DependentUpon>ViewLocalDrivingLicenseApplicatiionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Person\AddUpdatePerson.resx">
       <DependentUpon>AddUpdatePerson.cs</DependentUpon>
@@ -270,6 +306,29 @@
   <ItemGroup>
     <None Include="Resources\female.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\views.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_can.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient_information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,7 @@
 ﻿using Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
@@ -13,6 +14,69 @@ namespace DataAccessLayer
 {
     public class ApplicationData
     {
+
+        public static DataRow GetApplicationInfoRow(int appId)
+        {
+            SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+            string QUERY = @"
+            SELECT [ApplicationID]
+                  ,[ApplicantPersonID]
+                  ,[FirstName] + ' ' + [LastName] as FullName
+                  ,[ApplicationDate] 
+                  ,[UserName]
+                  ,ApplicationTypes.ApplicationTypeID
+                  ,[ApplicationTypeTitle]
+                  ,[ApplicationStatus]
+                  ,[LastStatusDate]
+                  ,[PaidFees]
+                  ,[CreatedByUserID]
+              FROM [DVLD].[dbo].[Applications]
+              JOIN ApplicationTypes
+                  ON ApplicationTypes.ApplicationTypeID = Applications.ApplicationTypeID
+              JOIN People
+                  ON People.PersonID = Applications.ApplicantPersonID
+              JOIN Users
+                  ON Users.UserID = Applications.CreatedByUserID
+              WHERE ApplicationID = @ApplicationId;"
+              ;
+            SqlCommand command = new SqlCommand(QUERY, connection);
+            command.Parameters.AddWithValue("@ApplicationId", appId);
+
+            DataTable result = new DataTable();
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    result.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception if needed
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            if (result.Rows.Count == 1)
+            {
+                return result.Rows[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+
         public static int? Add(
                int applicantPersonID,
                DateTime applicationDate,

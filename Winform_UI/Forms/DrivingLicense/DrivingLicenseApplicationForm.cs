@@ -132,7 +132,7 @@ namespace Winform_UI.Forms.DrivingLicense
         {
             int personId = (int)userChoosePerson1.ChosenId;
             int licenseClassID = GetSelectedLicenseClassID();
-            if (DrivingLicenseApplicationManager.PersonHasActiveDLApplication(personId, licenseClassID))
+            if (LocalDLApplicationManager.PersonHasActiveDLApplication(personId, licenseClassID))
             {
                 MessageBox.Show("This person already has a license with this class",
                                 "Error",
@@ -152,7 +152,7 @@ namespace Winform_UI.Forms.DrivingLicense
             }
             
             labelApplicationID.Text = ((int)applicationId).ToString();
-            int? dlApplicationId = DrivingLicenseApplicationManager
+            int? dlApplicationId = LocalDLApplicationManager
                                 .CreateApplication((int)applicationId, licenseClassID);
             if (dlApplicationId == null)
             {

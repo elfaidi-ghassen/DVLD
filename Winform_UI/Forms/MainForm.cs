@@ -71,7 +71,7 @@ namespace Winform_UI
 
         private void localLicenseToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            new ManageLocalDrivingLicenseApplicaions(UserId).ShowDialog();
         }
     }
 }

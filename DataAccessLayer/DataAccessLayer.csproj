@@ -49,6 +49,7 @@
     <Compile Include="CountryData.cs" />
     <Compile Include="DrivingLicenseApplicationData.cs" />
     <Compile Include="LicenseClassData.cs" />
+    <Compile Include="LocalDLApplicationData.cs" />
     <Compile Include="PeopleData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestTypeData.cs" />

@@ -45,7 +45,7 @@
     <Compile Include="ApplicationTypeManager.cs" />
     <Compile Include="BusinessLayer.cs" />
     <Compile Include="CountryManager.cs" />
-    <Compile Include="DrivingLicenseApplicationManager.cs" />
+    <Compile Include="LocalDLApplicationManager.cs" />
     <Compile Include="LicenseClassManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestTypeManager.cs" />

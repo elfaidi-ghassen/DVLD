@@ -342,12 +342,12 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2TextBox filterTextBox;
-        private Guna.UI2.WinForms.Guna2NumericUpDown filterNumber;
-        private Guna.UI2.WinForms.Guna2ComboBox filterActiveCombo;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2NumericUpDown filterNumber;
+        private Guna.UI2.WinForms.Guna2ComboBox filterActiveCombo;
     }
 }
