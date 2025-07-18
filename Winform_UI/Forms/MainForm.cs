@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Winform_UI.Debug;
 using Winform_UI.Forms;
 using Winform_UI.Forms.DrivingLicense;
 
@@ -72,6 +73,10 @@ namespace Winform_UI
         private void localLicenseToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new ManageLocalDrivingLicenseApplicaions(UserId).ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -52,6 +52,7 @@ namespace Winform_UI.Forms
             ApplicationType type = ApplicationTypeManager.GetApplicationTypeById(ApplicationTypeId);
             type.ApplicationTypeTitle = tbTitle.Text;
             type.ApplicationFees = Convert.ToDecimal(tbFees.Text);
+
             if(ApplicationTypeManager.Update(type))
             {
                 MessageBox.Show("Updated Succesfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);

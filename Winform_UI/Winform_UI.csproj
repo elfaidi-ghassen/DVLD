@@ -54,6 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Debug\CustomAssert.cs" />
+    <Compile Include="Forms\AssertUserInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AssertUserInputForm.Designer.cs">
+      <DependentUpon>AssertUserInputForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ApplicationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +102,12 @@
     </Compile>
     <Compile Include="Forms\DrivingLicense\ManageLocalDrivingLicenseApplicaions.Designer.cs">
       <DependentUpon>ManageLocalDrivingLicenseApplicaions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DrivingLicense\TestAppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DrivingLicense\TestAppointmentForm.Designer.cs">
+      <DependentUpon>TestAppointmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DrivingLicense\ViewLocalDrivingLicenseApplicatiionForm.cs">
       <SubType>Form</SubType>
@@ -182,6 +195,9 @@
     <Compile Include="UpdateTestTypeForm.Designer.cs">
       <DependentUpon>UpdateTestTypeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AssertUserInputForm.resx">
+      <DependentUpon>AssertUserInputForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ApplicationInfo.resx">
       <DependentUpon>ApplicationInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrivingLicense\ManageLocalDrivingLicenseApplicaions.resx">
       <DependentUpon>ManageLocalDrivingLicenseApplicaions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DrivingLicense\TestAppointmentForm.resx">
+      <DependentUpon>TestAppointmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrivingLicense\ViewLocalDrivingLicenseApplicatiionForm.resx">
       <DependentUpon>ViewLocalDrivingLicenseApplicatiionForm.cs</DependentUpon>
@@ -330,5 +349,6 @@
   <ItemGroup>
     <None Include="Resources\history.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

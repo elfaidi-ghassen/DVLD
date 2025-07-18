@@ -15,6 +15,38 @@ namespace DataAccessLayer
     public class ApplicationData
     {
 
+        public static bool SetStatusTo(int appId, int status)
+        {
+            SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+            string QUERY = @"    
+                    UPDATE [dbo].[Applications]
+                       SET 
+                          [ApplicationStatus] = @ApplicationStatus
+                          ,[LastStatusDate] = GETDATE()
+                     WHERE ApplicationID = @ApplicationID";
+            SqlCommand command = new SqlCommand(QUERY, connection);
+            command.Parameters.AddWithValue("@ApplicationStatus", status);
+            command.Parameters.AddWithValue("@ApplicationID", appId);
+
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return true;
+        }
+
+
         public static DataRow GetApplicationInfoRow(int appId)
         {
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);

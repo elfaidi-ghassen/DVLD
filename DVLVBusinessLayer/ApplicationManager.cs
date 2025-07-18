@@ -13,6 +13,11 @@ namespace DVLVBusinessLayer
     
     public class ApplicationManager
     {
+
+        public static bool SetStatusTo(int appId, enApplicationStatus status)
+        {
+            return ApplicationData.SetStatusTo(appId, (int)status);
+        }
         private static ApplicationInfo RowToApplicationInfo(DataRow row)
         {
             return new ApplicationInfo(

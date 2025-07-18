@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Util;
 using Util.DVLVBusinessLayer;
+using Winform_UI.Properties;
 
 namespace Winform_UI.Forms.DrivingLicense
 {
@@ -125,24 +126,25 @@ namespace Winform_UI.Forms.DrivingLicense
         }
 
 
-        private void LoadLocalDrivingApplications(List<LocalManageDLApplication> applications)
+        private void LoadApplications(List<LocalManageDLApplication> applications)
         {
             dgvData.Rows.Clear();
 
             foreach (LocalManageDLApplication localApp in applications)
             {
-                dgvData.Rows.Add(localApp.LocalApplicationID,
-                                 localApp.DrivingLicenseClassTitle,
-                                 localApp.NationalNo,
-                                 localApp.FullName,
-                                 localApp.ApplicationDate,
-                                 localApp.PassedTests,
-                                 ((enApplicationStatus)localApp.Status));
+                dgvData.Rows.Add(
+                    localApp.LocalApplicationID,
+                    localApp.DrivingLicenseClassTitle,
+                    localApp.NationalNo,
+                    localApp.FullName,
+                    localApp.ApplicationDate,
+                    localApp.PassedTests,
+                    ((enApplicationStatus)localApp.Status));
             }
         }
         private void LoadApplications()
         {
-            LoadLocalDrivingApplications(LocalDLApplicationManager.GetApplications());
+            LoadApplications(LocalDLApplicationManager.GetApplications());
         }
         private void UpdateCountLabel()
         {
@@ -210,7 +212,7 @@ namespace Winform_UI.Forms.DrivingLicense
                 case enApplicationStatus.New:
                 case enApplicationStatus.Canceled:
                 case enApplicationStatus.Completed:
-                    LoadLocalDrivingApplications(LocalDLApplicationManager
+                    LoadApplications(LocalDLApplicationManager
                                     .GetApplicationsByStatus(status));
                     break;
                 default:
@@ -223,7 +225,7 @@ namespace Winform_UI.Forms.DrivingLicense
         private void filterTextBox_TextChanged(object sender, EventArgs e)
         {
             if (StringToFilterOption(filterCombo.Text) == enLocalLicenseFilterOption.NationalNo)
-                LoadLocalDrivingApplications(LocalDLApplicationManager.GetApplications()
+                LoadApplications(LocalDLApplicationManager.GetApplications()
                     .Where(app => app.NationalNo.Contains(filterTextBox.Text)).ToList());
 
             
@@ -261,12 +263,22 @@ namespace Winform_UI.Forms.DrivingLicense
             LocalManageDLApplication application = LocalDLApplicationManager
                         .GetApplicatioByLocalId(selectedId);
 
-            // Can't cancel if it's already canceled or completed (i.e. not New)
             bool IssuedBefore = true;
-           cancelApplicationToolStripMenuItem.Enabled = application.IsNew;
-           issueDrivingLicensefirstTimeToolStripMenuItem.Enabled
-                 = application.IsCompleted && !IssuedBefore;
-           showLicenseToolStripMenuItem.Enabled = IssuedBefore;
+            // Can't cancel if it's already canceled or completed (i.e. not New)
+
+            if (!application.IsNew)
+            {
+                cancelApplicationToolStripMenuItem.Enabled = false;
+            }
+            if (!application.IsCompleted || IssuedBefore)
+            {
+                issueDrivingLicensefirstTimeToolStripMenuItem.Enabled = false;
+            }
+            if (!IssuedBefore || application.IsCanceled)
+            {
+                showLicenseToolStripMenuItem.Enabled = false;
+
+            }
             DisableAllTests();
             if (application.PassedTests < 3)
             {
@@ -276,6 +288,10 @@ namespace Winform_UI.Forms.DrivingLicense
                 scheduleTestToolStripMenuItem.Enabled = false;
             }
             
+            if (application.IsCanceled)
+            {
+                scheduleTestToolStripMenuItem.Enabled = false;
+            }
 
 
         }
@@ -301,6 +317,69 @@ namespace Winform_UI.Forms.DrivingLicense
 
             }
 
+
+        }
+
+        private void scheduleTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void visionTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int selectedId = (int)dgvData.CurrentRow.Cells[0].Value;
+            new TestAppointmentForm(
+                selectedId,
+                "Vision Test Appointment").ShowDialog();
+        }
+
+        private void theoryTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int selectedId = (int)dgvData.CurrentRow.Cells[0].Value;
+            new TestAppointmentForm(
+                selectedId,
+                "Theory Test Appointment").ShowDialog();
+
+        }
+
+        private void practicalTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int selectedId = (int)dgvData.CurrentRow.Cells[0].Value;
+            new TestAppointmentForm(
+                selectedId,
+                "Practical Test Appointment").ShowDialog();
+
+        }
+
+        private void labelCountRecords_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private int GetSelectedLocalId()
+        {
+            return (int)dgvData.CurrentRow.Cells[0].Value;
+        }
+        private void cancelApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            int appId = LocalDLApplicationManager
+                .GetApplicationIdByLocalId(GetSelectedLocalId());
+            if (ApplicationManager.SetStatusTo(appId, enApplicationStatus.Canceled))
+            {
+                MessageBox.Show("The application was canceled successfully", 
+                                "Info",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                LoadApplications();
+            } else
+            {
+                MessageBox.Show("Sorry, we couldn't cancel the application",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+
+            }
 
         }
     }

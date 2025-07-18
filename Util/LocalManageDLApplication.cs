@@ -38,5 +38,11 @@ namespace Util
                 return this.Status == (int)enApplicationStatus.Completed;
             }
         }
+        public bool IsCanceled
+        {
+            get {
+                return this.Status == (int)enApplicationStatus.Canceled;
+            }
+        }
     }
 }

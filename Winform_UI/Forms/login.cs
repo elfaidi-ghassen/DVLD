@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Util;
 using DVLVBusinessLayer;
+using System.Diagnostics;
+using Winform_UI.Debug;
 
 namespace Winform_UI
 {
@@ -48,14 +50,21 @@ namespace Winform_UI
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
+
+
+
             string username = tbUsername.Text;
             string password = tbPassword.Text;
             bool rememberMe = cbRememberMe.Checked;
             if (!UserManager.VerifyUser(username, password))
             {
-                MessageBox.Show("Wrong username/password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wrong username/password",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
                 return;
             }
+            
 
             if (!UserManager.IsActive(username, password))
             {
