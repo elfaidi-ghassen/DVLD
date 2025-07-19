@@ -70,6 +70,12 @@ namespace Winform_UI.Forms.DrivingLicense
             labelTrial.Text = TestManager
                                 .GetPreviousTrialsCount(LocalApplicationID, TestType)
                                 .ToString();
+            if (AppointmentID != null 
+                && AppointmentManager.GetAppointmentByID((int)AppointmentID)
+                    .TestID != null) {
+                btnSave.Enabled = false;
+                dateTimePicker1.Enabled = false;
+            }
         }       
         private decimal GetTestFees(enDrivingTestType TestType)
         {
@@ -156,6 +162,11 @@ namespace Winform_UI.Forms.DrivingLicense
                                 MessageBoxIcon.Error);
             }
             Close();
+        }
+
+        private void testGroupBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

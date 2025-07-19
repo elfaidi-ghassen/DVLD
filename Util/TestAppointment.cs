@@ -14,12 +14,13 @@ namespace Util
         public DateTime AppointmentDate { get; set; }
         public decimal PaidFees { get; set; }
         public int CreatedByUserID { get; set; }
+        public int? TestID { get; set; }
         public bool IsLocked { get; set; }
 
 
         public TestAppointment(int testAppointmentID, int testTypeID, int localAppID,
                            DateTime appointmentDate, decimal paidFees,
-                           int createdByUserID, bool isLocked)
+                           int createdByUserID, bool isLocked, int? testId)
         {
             TestAppointmentID = testAppointmentID;
             TestTypeID = testTypeID;
@@ -28,6 +29,7 @@ namespace Util
             PaidFees = paidFees;
             CreatedByUserID = createdByUserID;
             IsLocked = isLocked;
+            TestID = testId;
         }
     }
 

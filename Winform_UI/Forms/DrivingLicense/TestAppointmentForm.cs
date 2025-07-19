@@ -87,7 +87,8 @@ namespace Winform_UI.Forms.DrivingLicense
         }
         private void LoadAppointments()
         {
-            LoadAppointments(AppointmentManager.GetAppointmentsByLocalAppId(LocalApplicationID));
+            LoadAppointments(
+                AppointmentManager.GetAppointmentsByLocalAppId(LocalApplicationID, TestType));
         }
         private void UpdateCountLabel()
         {
@@ -115,7 +116,7 @@ namespace Winform_UI.Forms.DrivingLicense
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            if (AppointmentManager.HasActiveAppointment(LocalApplicationID))
+            if (AppointmentManager.HasActiveAppointment(LocalApplicationID, TestType))
             {
                 MessageBox.Show("There's already an active appointment",
                     "Error",
@@ -128,7 +129,8 @@ namespace Winform_UI.Forms.DrivingLicense
             {
                 MessageBox.Show("The applicant already passed the exam.",
                     "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
@@ -141,6 +143,14 @@ namespace Winform_UI.Forms.DrivingLicense
             int AppointmentID = (int)dgvData.CurrentRow.Cells[0].Value;
 
             new ScheduleTestForm(LocalApplicationID, TestType, UserID, AppointmentID).ShowDialog();
+            LoadAppointments();
+        }
+
+        private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
+
+        {
+            int AppointmentID = (int)dgvData.CurrentRow.Cells[0].Value;
+            new TakeTestForm(AppointmentID, UserID).ShowDialog();
             LoadAppointments();
         }
     }

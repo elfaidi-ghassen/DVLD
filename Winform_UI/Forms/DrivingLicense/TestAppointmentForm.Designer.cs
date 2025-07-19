@@ -38,11 +38,11 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.labelCountRecords = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.drivingLicenseApplicationForm1 = new Winform_UI.Controls.DrivingLicenseApplicationForm();
-            this.applicationInfo1 = new Winform_UI.Controls.ApplicationInfo();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drivingLicenseApplicationForm1 = new Winform_UI.Controls.DrivingLicenseApplicationForm();
+            this.applicationInfo1 = new Winform_UI.Controls.ApplicationInfo();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -170,21 +170,6 @@
             this.guna2Button2.Text = "Add";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
-            // drivingLicenseApplicationForm1
-            // 
-            this.drivingLicenseApplicationForm1.Location = new System.Drawing.Point(41, 443);
-            this.drivingLicenseApplicationForm1.Name = "drivingLicenseApplicationForm1";
-            this.drivingLicenseApplicationForm1.Size = new System.Drawing.Size(949, 201);
-            this.drivingLicenseApplicationForm1.TabIndex = 1;
-            // 
-            // applicationInfo1
-            // 
-            this.applicationInfo1.BackColor = System.Drawing.Color.Transparent;
-            this.applicationInfo1.Location = new System.Drawing.Point(38, 86);
-            this.applicationInfo1.Name = "applicationInfo1";
-            this.applicationInfo1.Size = new System.Drawing.Size(952, 370);
-            this.applicationInfo1.TabIndex = 0;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -206,6 +191,22 @@
             this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
             this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.takeTestToolStripMenuItem.Text = "Take test";
+            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
+            // 
+            // drivingLicenseApplicationForm1
+            // 
+            this.drivingLicenseApplicationForm1.Location = new System.Drawing.Point(41, 443);
+            this.drivingLicenseApplicationForm1.Name = "drivingLicenseApplicationForm1";
+            this.drivingLicenseApplicationForm1.Size = new System.Drawing.Size(949, 201);
+            this.drivingLicenseApplicationForm1.TabIndex = 1;
+            // 
+            // applicationInfo1
+            // 
+            this.applicationInfo1.BackColor = System.Drawing.Color.Transparent;
+            this.applicationInfo1.Location = new System.Drawing.Point(38, 86);
+            this.applicationInfo1.Name = "applicationInfo1";
+            this.applicationInfo1.Size = new System.Drawing.Size(952, 370);
+            this.applicationInfo1.TabIndex = 0;
             // 
             // TestAppointmentForm
             // 

@@ -322,6 +322,7 @@ namespace Winform_UI.Forms.DrivingLicense
                 localAppId,
                 type,
                 UserId).ShowDialog();
+            LoadApplications();
         }
         private void visionTestToolStripMenuItem_Click(object sender, EventArgs e)
         {

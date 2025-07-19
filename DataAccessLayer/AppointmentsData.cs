@@ -12,6 +12,33 @@ namespace DataAccessLayer
     public class AppointmentsData
     {
 
+        public static bool UpdateAppointmentLockStatus(int AppointmentID, int status)
+        {
+            SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+            string QUERY = @"
+                   UPDATE TestAppointments
+                   SET 
+                      [IsLocked] = @LockedStatus
+                   WHERE TestAppointmentID = @TestAppointmentID";
+
+            SqlCommand command = new SqlCommand(QUERY, connection);
+            command.Parameters.AddWithValue("@LockedStatus", status);
+            command.Parameters.AddWithValue("@TestAppointmentID", AppointmentID);
+
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                return false;
+            }
+
+            return true;
+        }
         public static bool UpdateAppointmentDate(int AppointmentID, DateTime NewDate)
         {
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);
@@ -46,15 +73,18 @@ namespace DataAccessLayer
             DataTable dataTable = new DataTable();
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);
             string QUERY = @"
-                           SELECT [TestAppointmentID]
+                           SELECT TestAppointments.[TestAppointmentID]
                           ,[TestTypeID]
+                          ,[TestID]
                           ,[LocalDrivingLicenseApplicationID]
                           ,[AppointmentDate]
                           ,[PaidFees]
-                          ,[CreatedByUserID]
+                          ,TestAppointments.[CreatedByUserID]
                           ,[IsLocked]
                       FROM [DVLD].[dbo].[TestAppointments]
-                      WHERE TestAppointmentID = @AppointmentID";
+                        LEFT JOIN Tests ON Tests.TestAppointmentID
+                                = TestAppointments.TestAppointmentID
+                      WHERE TestAppointments.TestAppointmentID = @AppointmentID";
             SqlCommand command = new SqlCommand(QUERY, connection);
             command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
             try
@@ -136,22 +166,27 @@ namespace DataAccessLayer
                 return appointmentID;
 
             }
-            public static DataTable GetDataTableByLocalApplicationId(int localAppId)
+            public static DataTable GetDataTableByLocalApplicationId(int localAppId, enDrivingTestType TestType)
         {
             DataTable dataTable = new DataTable();
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);
             string QUERY = @"
-                           SELECT [TestAppointmentID]
+                           SELECT TestAppointments.[TestAppointmentID]
                           ,[TestTypeID]
+                          ,[TestID]
                           ,[LocalDrivingLicenseApplicationID]
                           ,[AppointmentDate]
                           ,[PaidFees]
-                          ,[CreatedByUserID]
+                          ,TestAppointments.[CreatedByUserID]
                           ,[IsLocked]
                       FROM [DVLD].[dbo].[TestAppointments]
-                      WHERE LocalDrivingLicenseApplicationID = @localAppId";
+                      LEFT JOIN Tests ON Tests.TestAppointmentID =
+                                        TestAppointments.TestAppointmentID
+                      WHERE LocalDrivingLicenseApplicationID = @localAppId
+                            AND TestTypeID = @TestTypeID";
             SqlCommand command = new SqlCommand(QUERY, connection);
             command.Parameters.AddWithValue("@localAppId", localAppId);
+            command.Parameters.AddWithValue("@TestTypeID", (int)TestType);
             try
             {
                 connection.Open();

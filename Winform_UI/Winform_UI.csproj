@@ -109,6 +109,12 @@
     <Compile Include="Forms\DrivingLicense\ScheduleTestForm.Designer.cs">
       <DependentUpon>ScheduleTestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DrivingLicense\TakeTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DrivingLicense\TakeTestForm.Designer.cs">
+      <DependentUpon>TakeTestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DrivingLicense\TestAppointmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrivingLicense\ScheduleTestForm.resx">
       <DependentUpon>ScheduleTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DrivingLicense\TakeTestForm.resx">
+      <DependentUpon>TakeTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrivingLicense\TestAppointmentForm.resx">
       <DependentUpon>TestAppointmentForm.cs</DependentUpon>

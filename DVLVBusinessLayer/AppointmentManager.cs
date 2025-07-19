@@ -15,6 +15,10 @@ namespace DVLVBusinessLayer
         {
             return AppointmentsData.UpdateAppointmentDate(AppointmentID, NewDate);
         }
+        public static bool UpdateAppointmentLockStatus(int AppointmentID, bool status)
+        {
+            return AppointmentsData.UpdateAppointmentLockStatus(AppointmentID, status ? 1 : 0);
+        }
 
         public static bool AddAppointment(enDrivingTestType TestType,
                                           int LocalApplicationID,
@@ -31,27 +35,33 @@ namespace DVLVBusinessLayer
                                               UserID,
                                               IsLocked ? 1 : 0) != null;
         }
-        public static bool HasActiveAppointment(int LocalApplicationID)
+        public static bool HasActiveAppointment(int LocalApplicationID, enDrivingTestType TestType)
         {
-            return GetAppointmentsByLocalAppId(LocalApplicationID)
+            return GetAppointmentsByLocalAppId(LocalApplicationID, TestType)
                 .Where(app => !app.IsLocked).Count() > 0;
         }
         private static TestAppointment RowToTestAppointment(DataRow row)
         {
-            return new TestAppointment(
+            int? testTypeID = null;
+            if (row["TestID"] != DBNull.Value)
+            {
+                testTypeID = Convert.ToInt32(row["TestID"]);
+            }
+                return new TestAppointment(
                 Convert.ToInt32(row["TestAppointmentID"]),
                 Convert.ToInt32(row["TestTypeID"]),
                 Convert.ToInt32(row["LocalDrivingLicenseApplicationID"]),
                 (DateTime)row["AppointmentDate"],
                 Convert.ToDecimal(row["PaidFees"]),
                 Convert.ToInt32(row["CreatedByUserID"]),
-                Convert.ToInt32(row["IsLocked"]) == 1
+                Convert.ToInt32(row["IsLocked"]) == 1,
+                testTypeID
                 );
         }
-        public static List<TestAppointment> GetAppointmentsByLocalAppId(int localAppId)
+        public static List<TestAppointment> GetAppointmentsByLocalAppId(int localAppId, enDrivingTestType TestType)
         {
             List<TestAppointment> appointments = new List<TestAppointment>();
-            foreach (DataRow row in AppointmentsData.GetDataTableByLocalApplicationId(localAppId).Rows)
+            foreach (DataRow row in AppointmentsData.GetDataTableByLocalApplicationId(localAppId, TestType).Rows)
             {
                 appointments.Add(RowToTestAppointment(row));
             }
