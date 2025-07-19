@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.filterCombo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelCountRecords = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvData = new Guna.UI2.WinForms.Guna2DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -117,23 +117,22 @@
             this.labelCountRecords.Size = new System.Drawing.Size(173, 33);
             this.labelCountRecords.TabIndex = 18;
             this.labelCountRecords.Text = "# Records: xx";
-            this.labelCountRecords.Click += new System.EventHandler(this.labelCountRecords_Click);
             // 
-            // guna2Button1
+            // btnClose
             // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Gray;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(1019, 534);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(151, 40);
-            this.guna2Button1.TabIndex = 17;
-            this.guna2Button1.Text = "Close";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnClose.CheckedState.Parent = this.btnClose;
+            this.btnClose.CustomImages.Parent = this.btnClose;
+            this.btnClose.FillColor = System.Drawing.Color.Gray;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.HoverState.Parent = this.btnClose;
+            this.btnClose.Location = new System.Drawing.Point(1019, 534);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.ShadowDecoration.Parent = this.btnClose;
+            this.btnClose.Size = new System.Drawing.Size(151, 40);
+            this.btnClose.TabIndex = 17;
+            this.btnClose.Text = "Close";
+            this.btnClose.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label1
             // 
@@ -225,7 +224,7 @@
             this.showLicenseToolStripMenuItem,
             this.showPersonLicenseHisotryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(359, 285);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(359, 252);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showApplicationDetailsToolStripMenuItem
@@ -272,7 +271,6 @@
             this.scheduleTestToolStripMenuItem.Name = "scheduleTestToolStripMenuItem";
             this.scheduleTestToolStripMenuItem.Size = new System.Drawing.Size(358, 32);
             this.scheduleTestToolStripMenuItem.Text = "Schedule Test";
-            this.scheduleTestToolStripMenuItem.Click += new System.EventHandler(this.scheduleTestToolStripMenuItem_Click);
             // 
             // visionTestToolStripMenuItem
             // 
@@ -407,7 +405,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.filterCombo);
             this.Controls.Add(this.labelCountRecords);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvData);
             this.Name = "ManageLocalDrivingLicenseApplicaions";
@@ -427,7 +425,7 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ComboBox filterCombo;
         private System.Windows.Forms.Label labelCountRecords;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnClose;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvData;
         private Guna.UI2.WinForms.Guna2ComboBox filterStatusCombo;

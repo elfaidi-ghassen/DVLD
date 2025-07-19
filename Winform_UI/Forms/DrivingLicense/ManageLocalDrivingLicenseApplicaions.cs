@@ -1,4 +1,5 @@
-﻿using DVLVBusinessLayer;
+﻿using DataAccessLayer;
+using DVLVBusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -292,8 +293,6 @@ namespace Winform_UI.Forms.DrivingLicense
             {
                 scheduleTestToolStripMenuItem.Enabled = false;
             }
-
-
         }
 
         private void deleteApplicatioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -310,52 +309,37 @@ namespace Winform_UI.Forms.DrivingLicense
                 MessageBox.Show("Deleted Successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadApplications();
             }
-
             else
             {
                 MessageBox.Show("Error while deleting", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
-
         }
 
-        private void scheduleTestToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ShowTestAppointmentForm(int localAppId, enDrivingTestType type)
         {
-
+            new TestAppointmentForm(
+                localAppId,
+                type,
+                UserId).ShowDialog();
         }
-
         private void visionTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int selectedId = (int)dgvData.CurrentRow.Cells[0].Value;
-            new TestAppointmentForm(
-                selectedId,
-                "Vision Test Appointment").ShowDialog();
+            ShowTestAppointmentForm(selectedId, enDrivingTestType.Vision);
         }
 
         private void theoryTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int selectedId = (int)dgvData.CurrentRow.Cells[0].Value;
-            new TestAppointmentForm(
-                selectedId,
-                "Theory Test Appointment").ShowDialog();
-
+            ShowTestAppointmentForm(selectedId, enDrivingTestType.Theory);
         }
 
         private void practicalTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int selectedId = (int)dgvData.CurrentRow.Cells[0].Value;
-            new TestAppointmentForm(
-                selectedId,
-                "Practical Test Appointment").ShowDialog();
-
+            ShowTestAppointmentForm(selectedId, enDrivingTestType.Practical);
         }
-
-        private void labelCountRecords_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private int GetSelectedLocalId()
         {
             return (int)dgvData.CurrentRow.Cells[0].Value;

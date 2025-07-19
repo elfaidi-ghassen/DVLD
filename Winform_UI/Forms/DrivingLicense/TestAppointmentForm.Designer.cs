@@ -28,18 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.drivingLicenseApplicationForm1 = new Winform_UI.Controls.DrivingLicenseApplicationForm();
-            this.applicationInfo1 = new Winform_UI.Controls.ApplicationInfo();
             this.dgvData = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.labelCountRecords = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.drivingLicenseApplicationForm1 = new Winform_UI.Controls.DrivingLicenseApplicationForm();
+            this.applicationInfo1 = new Winform_UI.Controls.ApplicationInfo();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -51,21 +56,6 @@
             this.labelTitle.Size = new System.Drawing.Size(506, 72);
             this.labelTitle.TabIndex = 17;
             this.labelTitle.Text = "[Title will be here]";
-            // 
-            // drivingLicenseApplicationForm1
-            // 
-            this.drivingLicenseApplicationForm1.Location = new System.Drawing.Point(41, 443);
-            this.drivingLicenseApplicationForm1.Name = "drivingLicenseApplicationForm1";
-            this.drivingLicenseApplicationForm1.Size = new System.Drawing.Size(949, 201);
-            this.drivingLicenseApplicationForm1.TabIndex = 1;
-            // 
-            // applicationInfo1
-            // 
-            this.applicationInfo1.BackColor = System.Drawing.Color.Transparent;
-            this.applicationInfo1.Location = new System.Drawing.Point(38, 86);
-            this.applicationInfo1.Name = "applicationInfo1";
-            this.applicationInfo1.Size = new System.Drawing.Size(952, 370);
-            this.applicationInfo1.TabIndex = 0;
             // 
             // dgvData
             // 
@@ -84,7 +74,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvData.ColumnHeadersHeight = 4;
+            this.dgvData.ColumnHeadersHeight = 40;
+            this.dgvData.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -116,7 +107,7 @@
             this.dgvData.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.dgvData.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvData.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvData.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvData.ThemeStyle.HeaderStyle.Height = 40;
             this.dgvData.ThemeStyle.ReadOnly = false;
             this.dgvData.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvData.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -177,6 +168,44 @@
             this.guna2Button2.Size = new System.Drawing.Size(151, 40);
             this.guna2Button2.TabIndex = 26;
             this.guna2Button2.Text = "Add";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // drivingLicenseApplicationForm1
+            // 
+            this.drivingLicenseApplicationForm1.Location = new System.Drawing.Point(41, 443);
+            this.drivingLicenseApplicationForm1.Name = "drivingLicenseApplicationForm1";
+            this.drivingLicenseApplicationForm1.Size = new System.Drawing.Size(949, 201);
+            this.drivingLicenseApplicationForm1.TabIndex = 1;
+            // 
+            // applicationInfo1
+            // 
+            this.applicationInfo1.BackColor = System.Drawing.Color.Transparent;
+            this.applicationInfo1.Location = new System.Drawing.Point(38, 86);
+            this.applicationInfo1.Name = "applicationInfo1";
+            this.applicationInfo1.Size = new System.Drawing.Size(952, 370);
+            this.applicationInfo1.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
+            this.takeTestToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 101);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // takeTestToolStripMenuItem
+            // 
+            this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.takeTestToolStripMenuItem.Text = "Take test";
             // 
             // TestAppointmentForm
             // 
@@ -195,6 +224,7 @@
             this.Text = "TestAppointment";
             this.Load += new System.EventHandler(this.TestAppointmentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +240,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label labelCountRecords;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem takeTestToolStripMenuItem;
     }
 }

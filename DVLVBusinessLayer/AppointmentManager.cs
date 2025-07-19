@@ -11,7 +11,31 @@ namespace DVLVBusinessLayer
 {
     public class AppointmentManager
     {
+        public static bool UpdateAppointmentDate(int AppointmentID, DateTime NewDate)
+        {
+            return AppointmentsData.UpdateAppointmentDate(AppointmentID, NewDate);
+        }
 
+        public static bool AddAppointment(enDrivingTestType TestType,
+                                          int LocalApplicationID,
+                                          DateTime AppointmentDate,
+                                          decimal TestFees,
+                                          int UserID,
+                                          bool IsLocked)
+        {
+
+            return AppointmentsData.AddAppointment((int)TestType,
+                                              LocalApplicationID,
+                                              AppointmentDate,
+                                              TestFees,
+                                              UserID,
+                                              IsLocked ? 1 : 0) != null;
+        }
+        public static bool HasActiveAppointment(int LocalApplicationID)
+        {
+            return GetAppointmentsByLocalAppId(LocalApplicationID)
+                .Where(app => !app.IsLocked).Count() > 0;
+        }
         private static TestAppointment RowToTestAppointment(DataRow row)
         {
             return new TestAppointment(
@@ -32,6 +56,11 @@ namespace DVLVBusinessLayer
                 appointments.Add(RowToTestAppointment(row));
             }
             return appointments;
+        }
+        public static TestAppointment GetAppointmentByID(int AppointmentID)
+        {
+            return RowToTestAppointment(AppointmentsData
+                                        .GetAppointmentRowByID(AppointmentID));
         }
     }
 

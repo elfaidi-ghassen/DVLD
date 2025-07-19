@@ -136,9 +136,9 @@
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(46)))), ((int)(((byte)(53)))));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(589, 22);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(177, 85);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(183, 85);
             this.guna2HtmlLabel2.TabIndex = 6;
-            this.guna2HtmlLabel2.Text = "DVLV";
+            this.guna2HtmlLabel2.Text = "DVLD";
             // 
             // icons
             // 
@@ -185,7 +185,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "DVLD";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,5 @@
-﻿using DVLVBusinessLayer;
+﻿using DataAccessLayer;
+using DVLVBusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,15 +13,37 @@ using Util;
 
 namespace Winform_UI.Forms.DrivingLicense
 {
+
+
     public partial class TestAppointmentForm : Form
     {
+
         private int LocalApplicationID { get; }
+        private int UserID { get; set;  }
         private string FormTitle { get; }
-        public TestAppointmentForm(int localAppId, string formTitle)
+        private enDrivingTestType TestType { get; }
+        private string TestTypeToTitle(enDrivingTestType type)
+        {
+            switch(type)
+            {
+                case enDrivingTestType.Vision:
+                    return "Vision Test Appointment";
+                case enDrivingTestType.Theory:
+                    return "Theory Test Appointment";
+                case enDrivingTestType.Practical:
+                    return "Practical Test Appointment";
+                case enDrivingTestType.None:
+                default:
+                    return "";
+            }
+        }
+        public TestAppointmentForm(int localAppId, enDrivingTestType type, int UserID)
         {
             InitializeComponent();
             this.LocalApplicationID = localAppId;
-            this.FormTitle = formTitle;
+            this.UserID = UserID;
+            this.FormTitle = TestTypeToTitle(type);
+            this.TestType = type;
             InitializeForm();
         }
         private void InitializeForm()
@@ -87,6 +110,38 @@ namespace Winform_UI.Forms.DrivingLicense
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (AppointmentManager.HasActiveAppointment(LocalApplicationID))
+            {
+                MessageBox.Show("There's already an active appointment",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            if (TestManager.AlreadyPassedTest(LocalApplicationID, TestType))
+            {
+                MessageBox.Show("The applicant already passed the exam.",
+                    "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            new ScheduleTestForm(LocalApplicationID, TestType, UserID).ShowDialog();
+            LoadAppointments();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int AppointmentID = (int)dgvData.CurrentRow.Cells[0].Value;
+
+            new ScheduleTestForm(LocalApplicationID, TestType, UserID, AppointmentID).ShowDialog();
+            LoadAppointments();
         }
     }
 }
