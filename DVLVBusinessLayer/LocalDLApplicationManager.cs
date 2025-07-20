@@ -29,14 +29,15 @@ namespace DVLVBusinessLayer
             foreach (DataRow row in LocalDLApplicationData.GetDataTable().Rows)
             {
                 rows.Add(new LocalManageDLApplication(
-                    Convert.ToInt32(row["LocalDrivingLicenseApplicationID"]),
-                    (string)(row["ClassName"]),
-                    (string)(row["NationalNo"]),
-                    (string)(row["FullName"]),
-                    (DateTime)(row["ApplicationDate"]),
-                    Convert.ToInt32(row["PassedTests"]),
-                    Convert.ToInt32(row["ApplicationStatus"])
-
+                            Convert.ToInt32(row["LocalDrivingLicenseApplicationID"]),
+                            (string)(row["ClassName"]),
+                            (string)(row["NationalNo"]),
+                            (string)(row["FullName"]),
+                            (DateTime)(row["ApplicationDate"]),
+                            Convert.ToInt32(row["PassedTests"]),
+                            Convert.ToInt32(row["ApplicationStatus"]),
+                            Convert.ToInt32(row["PersonID"]),
+                            Convert.ToInt32(row["LicenseClassID"])
                     ));
             }
             return rows;
@@ -58,8 +59,9 @@ namespace DVLVBusinessLayer
                     (string)(row["FullName"]),
                     (DateTime)(row["ApplicationDate"]),
                     Convert.ToInt32(row["PassedTests"]),
-                    Convert.ToInt32(row["ApplicationStatus"])
-
+                    Convert.ToInt32(row["ApplicationStatus"]),
+                    Convert.ToInt32(row["PersonID"]),
+                    Convert.ToInt32(row["LicenseClassID"])
                     );
         }
         public static List<LocalManageDLApplication> GetApplicationsByStatus(enApplicationStatus status)

@@ -10,21 +10,25 @@ namespace Util
     public class LocalManageDLApplication
     {
         public int LocalApplicationID { get; set; }
+        public int LicenseClassID { get; set; }
         public string DrivingLicenseClassTitle { get; set; }
         public string NationalNo { get; set; }
+        public int PersonID { get; set; }
         public string FullName { get; set; }
         public DateTime ApplicationDate { get; set; }
         public int PassedTests { get; set; }
         public int Status { get; set; }
-        public LocalManageDLApplication(int localApplicationID, string drivingLicenseClassTitle, string nationalNo, string fullName, DateTime applicationDate, int passedTests, int status)
+        public LocalManageDLApplication(int localApplicationID, string drivingLicenseClassTitle, string nationalNo, string fullName, DateTime applicationDate, int passedTests, int status, int personID, int licenseClassID)
         {
             LocalApplicationID = localApplicationID;
             DrivingLicenseClassTitle = drivingLicenseClassTitle;
             NationalNo = nationalNo;
+            PersonID = personID;
             FullName = fullName;
             ApplicationDate = applicationDate;
             PassedTests = passedTests;
             Status = status;
+            LicenseClassID = licenseClassID;
         }
         public bool IsNew
         {

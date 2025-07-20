@@ -24,7 +24,7 @@ namespace Winform_UI.Forms.DrivingLicense
         {
             int appId = LocalDLApplicationManager.GetApplicationIdByLocalId(LocalAppId);
             applicationInfo1.LoadInfo(appId);
-            drivingLicenseApplicationForm1.LoadApplication(LocalAppId);
+            drivingLicenseApplicationForm1.LoadInfo(LocalAppId);
         }
 
         private void applicationInfo1_Load(object sender, EventArgs e)

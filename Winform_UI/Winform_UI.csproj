@@ -97,6 +97,12 @@
     <Compile Include="Forms\DrivingLicense\DrivingLicenseApplicationForm.Designer.cs">
       <DependentUpon>DrivingLicenseApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DrivingLicense\IssueDrivingLicenseFirstTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DrivingLicense\IssueDrivingLicenseFirstTimeForm.Designer.cs">
+      <DependentUpon>IssueDrivingLicenseFirstTimeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DrivingLicense\ManageLocalDrivingLicenseApplicaions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrivingLicense\DrivingLicenseApplicationForm.resx">
       <DependentUpon>DrivingLicenseApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DrivingLicense\IssueDrivingLicenseFirstTimeForm.resx">
+      <DependentUpon>IssueDrivingLicenseFirstTimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrivingLicense\ManageLocalDrivingLicenseApplicaions.resx">
       <DependentUpon>ManageLocalDrivingLicenseApplicaions.cs</DependentUpon>

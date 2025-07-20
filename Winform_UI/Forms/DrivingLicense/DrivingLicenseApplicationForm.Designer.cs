@@ -32,7 +32,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPersonSelect = new System.Windows.Forms.TabPage();
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
-            this.userChoosePerson1 = new Winform_UI.Controls.UserChoosePerson();
             this.tabApplication = new System.Windows.Forms.TabPage();
             this.comboLicenseClass = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.saveButton = new Guna.UI2.WinForms.Guna2Button();
+            this.userChoosePerson1 = new Winform_UI.Controls.UserChoosePerson();
             this.tabControl1.SuspendLayout();
             this.tabPersonSelect.SuspendLayout();
             this.tabApplication.SuspendLayout();
@@ -98,15 +98,6 @@
             this.btnNext.TabIndex = 32;
             this.btnNext.Text = "Next";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // userChoosePerson1
-            // 
-            this.userChoosePerson1.BackColor = System.Drawing.Color.White;
-            this.userChoosePerson1.ChosenId = null;
-            this.userChoosePerson1.Location = new System.Drawing.Point(18, 6);
-            this.userChoosePerson1.Name = "userChoosePerson1";
-            this.userChoosePerson1.Size = new System.Drawing.Size(933, 443);
-            this.userChoosePerson1.TabIndex = 0;
             // 
             // tabApplication
             // 
@@ -255,7 +246,7 @@
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
             this.guna2Button3.Size = new System.Drawing.Size(131, 39);
             this.guna2Button3.TabIndex = 10;
-            this.guna2Button3.Text = "Cancel";
+            this.guna2Button3.Text = "Close";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // saveButton
@@ -272,6 +263,15 @@
             this.saveButton.TabIndex = 9;
             this.saveButton.Text = "Save";
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // userChoosePerson1
+            // 
+            this.userChoosePerson1.BackColor = System.Drawing.Color.White;
+            this.userChoosePerson1.ChosenId = null;
+            this.userChoosePerson1.Location = new System.Drawing.Point(18, 6);
+            this.userChoosePerson1.Name = "userChoosePerson1";
+            this.userChoosePerson1.Size = new System.Drawing.Size(933, 443);
+            this.userChoosePerson1.TabIndex = 0;
             // 
             // DrivingLicenseApplicationForm
             // 

@@ -264,21 +264,31 @@ namespace Winform_UI.Forms.DrivingLicense
             LocalManageDLApplication application = LocalDLApplicationManager
                         .GetApplicatioByLocalId(selectedId);
 
-            bool IssuedBefore = true;
-            // Can't cancel if it's already canceled or completed (i.e. not New)
+            bool IssuedBefore = DrivingLicenseManager.HasDrivingLicenseWithClass(
+                            application.PersonID, application.LicenseClassID); 
 
+            // Can't cancel if it's already canceled or completed (i.e. not New)
+            
             if (!application.IsNew)
             {
                 cancelApplicationToolStripMenuItem.Enabled = false;
+            } else
+            {
+                cancelApplicationToolStripMenuItem.Enabled = true;
             }
-            if (!application.IsCompleted || IssuedBefore)
+            if (!application.IsNew || IssuedBefore || application.PassedTests < 3)
             {
                 issueDrivingLicensefirstTimeToolStripMenuItem.Enabled = false;
+            } else
+            {
+                issueDrivingLicensefirstTimeToolStripMenuItem.Enabled = true;
             }
             if (!IssuedBefore || application.IsCanceled)
             {
                 showLicenseToolStripMenuItem.Enabled = false;
-
+            } else
+            {
+                showLicenseToolStripMenuItem.Enabled = true;
             }
             DisableAllTests();
             if (application.PassedTests < 3)
@@ -293,6 +303,7 @@ namespace Winform_UI.Forms.DrivingLicense
             {
                 scheduleTestToolStripMenuItem.Enabled = false;
             }
+           
         }
 
         private void deleteApplicatioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -311,7 +322,8 @@ namespace Winform_UI.Forms.DrivingLicense
             }
             else
             {
-                MessageBox.Show("Error while deleting", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This application cannot be deleted because it is linked to other records in the database",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -341,7 +353,7 @@ namespace Winform_UI.Forms.DrivingLicense
             int selectedId = (int)dgvData.CurrentRow.Cells[0].Value;
             ShowTestAppointmentForm(selectedId, enDrivingTestType.Practical);
         }
-        private int GetSelectedLocalId()
+        private int SelectedLocalAppID()
         {
             return (int)dgvData.CurrentRow.Cells[0].Value;
         }
@@ -349,7 +361,7 @@ namespace Winform_UI.Forms.DrivingLicense
         {
 
             int appId = LocalDLApplicationManager
-                .GetApplicationIdByLocalId(GetSelectedLocalId());
+                .GetApplicationIdByLocalId(SelectedLocalAppID());
             if (ApplicationManager.SetStatusTo(appId, enApplicationStatus.Canceled))
             {
                 MessageBox.Show("The application was canceled successfully", 
@@ -363,9 +375,15 @@ namespace Winform_UI.Forms.DrivingLicense
                 "Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
-
             }
 
+        }
+
+        private void issueDrivingLicensefirstTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            new IssueDrivingLicenseFirstTimeForm(UserId, SelectedLocalAppID()).ShowDialog();
+            LoadApplications();
         }
     }
 }

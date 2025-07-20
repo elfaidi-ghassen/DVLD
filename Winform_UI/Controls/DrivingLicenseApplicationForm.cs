@@ -19,7 +19,7 @@ namespace Winform_UI.Controls
             InitializeComponent();
         }
 
-        public void LoadApplication(int localAppId)
+        public void LoadInfo(int localAppId)
         {
             LocalManageDLApplication app = LocalDLApplicationManager.GetApplicatioByLocalId(localAppId);
             labelID.Text = app.LocalApplicationID.ToString();

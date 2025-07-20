@@ -134,7 +134,15 @@ namespace Winform_UI.Forms.DrivingLicense
             int licenseClassID = GetSelectedLicenseClassID();
             if (LocalDLApplicationManager.PersonHasActiveDLApplication(personId, licenseClassID))
             {
-                MessageBox.Show("This person already has a license with this class",
+                MessageBox.Show("This person already has an active application for this class",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return;
+            }
+            if (DrivingLicenseManager.HasDrivingLicenseWithClass(personId, licenseClassID))
+            {
+                MessageBox.Show("This person has a driving license with this class",
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);

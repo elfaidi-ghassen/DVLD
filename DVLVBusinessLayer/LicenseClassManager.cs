@@ -11,6 +11,7 @@ namespace DVLVBusinessLayer
 {
     public class LicenseClassManager
     {
+        
         public static List<LicenseClass> GetAllClasses()
         {
             List<LicenseClass> classes = new List<LicenseClass>();

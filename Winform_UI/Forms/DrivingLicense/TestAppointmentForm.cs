@@ -51,7 +51,7 @@ namespace Winform_UI.Forms.DrivingLicense
             labelTitle.Text = FormTitle;
             applicationInfo1.LoadInfo(LocalDLApplicationManager
                 .GetApplicationIdByLocalId(LocalApplicationID));
-            drivingLicenseApplicationForm1.LoadApplication(LocalApplicationID);
+            drivingLicenseApplicationForm1.LoadInfo(LocalApplicationID);
 
         }
         private void InitColumns()

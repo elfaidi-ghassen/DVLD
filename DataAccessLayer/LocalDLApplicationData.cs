@@ -37,16 +37,15 @@ namespace DataAccessLayer
                 command1.ExecuteNonQuery();
                 command2.ExecuteNonQuery();
                 transaction.Commit();
-
+                connection.Close();
             }
             catch (Exception e)
             {
                 transaction.Rollback();
-            }
-            finally
-            {
                 connection.Close();
+                return false;
             }
+
 
             return true;
         }
@@ -95,6 +94,7 @@ namespace DataAccessLayer
                                 ,PE.FirstName + ' ' + PE.LastName 
                                     AS FullName
                                 ,PE.NationalNo
+                                ,PE.PersonID
                                 ,AP.ApplicationDate
                                 ,AP.ApplicationStatus
                                 , COUNT(DISTINCT CASE WHEN TestResult = 1 THEN TestTypeID ELSE NULL END) as PassedTests
@@ -118,6 +118,7 @@ namespace DataAccessLayer
                             LC.ClassName, 
                             PE.FirstName + ' ' + PE.LastName,
                             PE.NationalNo,
+                            PE.PersonID,
                             AP.ApplicationDate,
                             AP.ApplicationStatus;
                             ";
@@ -155,6 +156,7 @@ namespace DataAccessLayer
                                 ,PE.FirstName + ' ' + PE.LastName 
                                     AS FullName
                                 ,PE.NationalNo
+                                ,PE.PersonID
                                 ,AP.ApplicationDate
                                 ,AP.ApplicationStatus
                                 , COUNT(DISTINCT CASE WHEN TestResult = 1 THEN TestTypeID ELSE NULL END) as PassedTests
@@ -177,6 +179,7 @@ namespace DataAccessLayer
                             LC.ClassName, 
                             PE.FirstName + ' ' + PE.LastName,
                             PE.NationalNo,
+                            PE.PersonID,
                             AP.ApplicationDate,
                             AP.ApplicationStatus;
                             ";
@@ -214,6 +217,7 @@ namespace DataAccessLayer
                                 ,PE.FirstName + ' ' + PE.LastName 
                                     AS FullName
                                 ,PE.NationalNo
+                                ,PE.PersonID
                                 ,AP.ApplicationDate
                                 ,AP.ApplicationStatus
                                 , COUNT(DISTINCT CASE WHEN TestResult = 1 THEN TestTypeID ELSE NULL END) as PassedTests
@@ -236,6 +240,7 @@ namespace DataAccessLayer
                             LC.ClassName, 
                             PE.FirstName + ' ' + PE.LastName,
                             PE.NationalNo,
+                            PE.PersonID,
                             AP.ApplicationDate,
                             AP.ApplicationStatus;";
             SqlCommand command = new SqlCommand(QUERY, connection);

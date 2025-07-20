@@ -45,6 +45,7 @@
     <Compile Include="ApplicationInfo.cs" />
     <Compile Include="ApplicationType.cs" />
     <Compile Include="DataEnums.cs" />
+    <Compile Include="Driver.cs" />
     <Compile Include="TestAppointment.cs" />
     <Compile Include="Cache.cs" />
     <Compile Include="Country.cs" />
