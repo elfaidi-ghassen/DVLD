@@ -12,6 +12,56 @@ namespace DataAccessLayer
     public class DriversData
     {
 
+        public static DataTable GetDriversViewDataTable()
+        {
+            DataTable dataTable = new DataTable();
+            SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+            string QUERY = @"
+                            SELECT Licenses.[DriverID]
+                            ,[People].[PersonID]
+                            ,Drivers.[CreatedByUserID]
+                            ,NationalNo
+                            ,CONCAT_WS(' ',
+                                FirstName,
+                                SecondName,
+                                ThirdName,
+                                LastName) AS FullName
+                            ,[CreatedDate]
+                            , COUNT(LicenseID) AS ActiveLicensesCount
+                        FROM [Drivers]
+                        JOIN [People]                         
+                            ON [People].[PersonID] = [Drivers].[PersonID]          
+                        JOIN [Licenses]
+                        ON [Licenses].[DriverID] = [Drivers].[DriverID]
+                    GROUP BY Licenses.DriverID, [People].[PersonID], NationalNo, Drivers.CreatedByUserID, CONCAT_WS(' ',
+                                FirstName,
+                                SecondName,
+                                ThirdName,
+                                LastName), CreatedDate";
+            SqlCommand command = new SqlCommand(QUERY, connection);
+            
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dataTable.Load(reader);
+                }
+
+            }
+            catch (Exception e)
+            {
+                // !!!
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dataTable;
+
+        }
+
         public static DataRow GetDataRowByPersonID(int PersonID)
         {
             DataTable dataTable = new DataTable();

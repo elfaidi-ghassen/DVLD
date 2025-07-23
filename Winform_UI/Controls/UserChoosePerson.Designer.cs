@@ -160,6 +160,7 @@
             this.Controls.Add(this.personInfo1);
             this.Name = "UserChoosePerson";
             this.Size = new System.Drawing.Size(933, 443);
+            this.Load += new System.EventHandler(this.UserChoosePerson_Load);
             this.filterGroup.ResumeLayout(false);
             this.filterGroup.PerformLayout();
             this.ResumeLayout(false);

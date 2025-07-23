@@ -21,7 +21,7 @@ namespace Winform_UI.Controls
 
         public void LoadInfo(int localAppId)
         {
-            LocalManageDLApplication app = LocalDLApplicationManager.GetApplicatioByLocalId(localAppId);
+            LocalManageDLApplication app = LocalDLApplicationManager.GetApplicationByLocalId(localAppId);
             labelID.Text = app.LocalApplicationID.ToString();
             labelPassedTests.Text = $"{app.PassedTests}/3";
             labelClass.Text = app.DrivingLicenseClassTitle;

@@ -11,17 +11,19 @@ namespace Util
         public int UserId { get; set; }
         public int PersonId { get; set; }
         public string UserName { get; set; }
-        public string Password { get; set; }
+        public string PasswordHash { get; set; }
+        public string Salt { get; set; }
         public bool IsActive { get; set; }
 
         // Constructor
-        public User(int userId, int personId, string userName, string password, bool isActive)
+        public User(int userId, int personId, string userName, string password, string salt, bool isActive)
         {
             UserId = userId;
             PersonId = personId;
             UserName = userName;
-            Password = password;
+            PasswordHash = password;
             IsActive = isActive;
+            Salt = salt;
         }
 
     }

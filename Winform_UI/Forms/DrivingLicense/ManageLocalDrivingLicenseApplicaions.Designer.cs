@@ -317,6 +317,7 @@
             this.showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";
             this.showLicenseToolStripMenuItem.Size = new System.Drawing.Size(358, 32);
             this.showLicenseToolStripMenuItem.Text = "Show License";
+            this.showLicenseToolStripMenuItem.Click += new System.EventHandler(this.showLicenseToolStripMenuItem_Click);
             // 
             // showPersonLicenseHisotryToolStripMenuItem
             // 
@@ -324,6 +325,7 @@
             this.showPersonLicenseHisotryToolStripMenuItem.Name = "showPersonLicenseHisotryToolStripMenuItem";
             this.showPersonLicenseHisotryToolStripMenuItem.Size = new System.Drawing.Size(358, 32);
             this.showPersonLicenseHisotryToolStripMenuItem.Text = "Show Person License Hisotry";
+            this.showPersonLicenseHisotryToolStripMenuItem.Click += new System.EventHandler(this.showPersonLicenseHisotryToolStripMenuItem_Click);
             // 
             // filterStatusCombo
             // 

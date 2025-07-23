@@ -41,7 +41,7 @@ namespace Winform_UI.Forms.DrivingLicense
             TestAppointment appointment = AppointmentManager
                                     .GetAppointmentByID(AppointmentID);
             LocalManageDLApplication app = LocalDLApplicationManager
-                  .GetApplicatioByLocalId(appointment.LocalDrivingLicenseApplicationID);
+                  .GetApplicationByLocalId(appointment.LocalDrivingLicenseApplicationID);
 
             labelDLAppId.Text = app.LocalApplicationID.ToString();
             labelFullName.Text = app.FullName;

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Winform_UI.Debug;
 using Winform_UI.Forms;
+using Winform_UI.Forms.Driver;
 using Winform_UI.Forms.DrivingLicense;
 
 namespace Winform_UI
@@ -77,6 +78,17 @@ namespace Winform_UI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+        }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ManageDriversForm().Show();
+        }
+
+        private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("not implemented yet");
+
         }
     }
 }

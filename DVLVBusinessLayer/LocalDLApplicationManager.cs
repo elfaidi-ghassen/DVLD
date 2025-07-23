@@ -43,7 +43,7 @@ namespace DVLVBusinessLayer
             return rows;
         }
 
-        public static LocalManageDLApplication GetApplicatioByLocalId(int localAppId)
+        public static LocalManageDLApplication GetApplicationByLocalId(int localAppId)
         {
             DataRow appRow = LocalDLApplicationData.GetApplicatioByLocalId(localAppId);
             if (appRow == null) { return null; }

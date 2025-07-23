@@ -11,6 +11,26 @@ namespace DVLVBusinessLayer
 {
     public class DriverManager
     {
+        public static List<DriverView> GetDriversViewList()
+        {
+            List<DriverView> drivers = new List<DriverView>();
+            foreach (DataRow row in DriversData.GetDriversViewDataTable().Rows)
+            {
+                drivers.Add(DataRowToDriverView(row));
+            }
+            return drivers;
+        }
+
+        private static DriverView DataRowToDriverView(DataRow row)
+        {
+            return new DriverView(
+                    Convert.ToInt32(row["DriverID"]),
+                    Convert.ToInt32(row["PersonID"]),
+                    row["NationalNo"].ToString(),
+                    row["FullName"].ToString(),
+                    (DateTime)row["CreatedDate"],
+                    Convert.ToInt32(row["ActiveLicensesCount"]));
+        }
         public static bool PersonIsDriver(int PersonID)
         {
             return DriversData.PersonIsDriver(PersonID);

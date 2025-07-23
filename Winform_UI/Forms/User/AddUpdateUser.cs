@@ -133,7 +133,7 @@ namespace Winform_UI.Forms
             User user = UserManager.GetUserById((int)this.currentUserId);
             user.UserName = tbUsername.Text;
             if (!excludePassword)
-                user.Password = tbPassword.Text;
+                user.PasswordHash = tbPassword.Text;
             user.IsActive = cbIsActive.Checked;
 
 

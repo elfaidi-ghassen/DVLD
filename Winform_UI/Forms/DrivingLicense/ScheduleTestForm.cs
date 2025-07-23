@@ -62,7 +62,7 @@ namespace Winform_UI.Forms.DrivingLicense
         private void LoadFormInfo(int LocalApplicationID, enDrivingTestType TestType)
         {
             LocalManageDLApplication app =  LocalDLApplicationManager
-                                        .GetApplicatioByLocalId(LocalApplicationID);
+                                        .GetApplicationByLocalId(LocalApplicationID);
             labelDLAppId.Text = app.LocalApplicationID.ToString();
             labelFullName.Text = app.FullName;
             labelDriverClass.Text = app.DrivingLicenseClassTitle;

@@ -116,6 +116,7 @@
             this.Controls.Add(this.applicationInfo1);
             this.Name = "IssueDrivingLicenseFirstTimeForm";
             this.Text = "IssueDrivingLicenseFirstTimeForm";
+            this.Load += new System.EventHandler(this.IssueDrivingLicenseFirstTimeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,6 +17,8 @@ namespace Winform_UI.Controls
     public partial class UserChoosePerson : UserControl
     {
         public int? ChosenId { get; set; }
+        public delegate void DelOnPersonSelect(int chosenId);
+        public DelOnPersonSelect OnPersonSelect;
         public UserChoosePerson()
         {
             InitializeComponent();
@@ -43,6 +45,8 @@ namespace Winform_UI.Controls
                     }
                     this.ChosenId = person.PersonID;
                     this.personInfo1.LoadPerson((int)ChosenId);
+                    OnPersonSelect.Invoke((int)ChosenId);
+
                     break;
                 case "Person ID":
                     try
@@ -60,7 +64,10 @@ namespace Winform_UI.Controls
                     
                     this.ChosenId = person.PersonID;
                     LoadPerson((int)ChosenId);
-                    
+                    if (OnPersonSelect != null)
+                    {
+                        OnPersonSelect.Invoke((int)ChosenId);
+                    }
                     break;
 
 
@@ -97,6 +104,11 @@ namespace Winform_UI.Controls
         public void DisableFilters()
         {
             filterGroup.Enabled = false;
+        }
+
+        private void UserChoosePerson_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

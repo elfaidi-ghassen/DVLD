@@ -23,21 +23,36 @@ namespace DVLVBusinessLayer
         }
         public static int? AddUserGetId(int personId, string username, string password, bool isActive)
         {
-            return UserData.AddUserGetId(personId, username, password, isActive);
+            (byte[], byte[]) passwordSaltPair = PasswordHasher.HashPassword(password);
+            string passwordHash = Convert.ToBase64String(passwordSaltPair.Item1);
+            string salt = Convert.ToBase64String(passwordSaltPair.Item2);
+            return UserData.AddUserGetId(personId, username, passwordHash, salt, isActive);
         }
     
+        public static User GetUserByUsername(string username)
+        {
+            DataRow row = UserData.GetUserByUsername(username);
+            if (row == null) { return null; }
+
+            return DataRowToUser(row);
+        }
         public static bool VerifyUser(string username, string password)
         {
-            return UserData.GetUserId(username, password) != null;
+            User user = GetUserByUsername(username);
+            if (user == null) { return false; }
+
+            return PasswordHasher.VerifyPassword(password,
+                                    Convert.FromBase64String(user.Salt), 
+                                    Convert.FromBase64String(user.PasswordHash));
         }
 
-        public static int? GetUserId(string username, string password)
+        public static int? GetUserId(string username)
         {
-            return UserData.GetUserId(username, password);
+            return UserData.GetUserId(username);
         }
-        public static bool IsActive(string username, string password)
+        public static bool IsActive(string username)
         {
-            return UserData.IsActive(username, password);
+            return UserData.IsActive(username);
 
         }
         public static User GetUserById(int userId)
@@ -56,11 +71,17 @@ namespace DVLVBusinessLayer
 
         private static User DataRowToUser(DataRow row)
         {
+            string salt = null;
+            if (row["Salt"] != DBNull.Value)
+            {
+                salt = (string)row["Salt"];
+            }
             return new User(
                         (int)row["UserID"],
                         (int)row["PersonID"],
                         (string)row["UserName"],
-                        (string)row["Password"],
+                        (string)row["PasswordHash"],
+                        salt,
                         (bool)row["IsActive"]
                     );
         }

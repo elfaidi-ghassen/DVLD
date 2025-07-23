@@ -38,7 +38,7 @@ namespace Winform_UI.Forms.DrivingLicense
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            LocalManageDLApplication app = LocalDLApplicationManager.GetApplicatioByLocalId(LocalAppID);
+            LocalManageDLApplication app = LocalDLApplicationManager.GetApplicationByLocalId(LocalAppID);
             int ApplicationID = LocalDLApplicationManager.GetApplicationIdByLocalId(LocalAppID);
             int PersonID = app.PersonID;
 
@@ -79,6 +79,11 @@ namespace Winform_UI.Forms.DrivingLicense
                     MessageBoxIcon.Information);
             }
             Close();
+        }
+
+        private void IssueDrivingLicenseFirstTimeForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
