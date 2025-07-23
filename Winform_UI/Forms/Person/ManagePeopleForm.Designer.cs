@@ -39,13 +39,13 @@
             this.labelRows = new System.Windows.Forms.Label();
             this.dgvPeople = new Guna.UI2.WinForms.Guna2DataGridView();
             this.PersonContext = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.tbTextFilter = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbNumberFilter = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
             this.PersonContext.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbNumberFilter)).BeginInit();
@@ -206,12 +206,33 @@
             this.PersonContext.Name = "PersonContext";
             this.PersonContext.Size = new System.Drawing.Size(147, 132);
             // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(146, 32);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(146, 32);
+            this.viewToolStripMenuItem.Text = "View";
+            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
+            // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(146, 32);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(146, 32);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // btnClose
             // 
@@ -277,27 +298,6 @@
             this.tbNumberFilter.Visible = false;
             this.tbNumberFilter.ValueChanged += new System.EventHandler(this.tbNumberFilter_ValueChanged);
             // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(146, 32);
-            this.refreshToolStripMenuItem.Text = "Refresh";
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(146, 32);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(146, 32);
-            this.viewToolStripMenuItem.Text = "View";
-            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
-            // 
             // ManagePeopleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
@@ -316,6 +316,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManagePeopleForm";
             this.Text = "          ";
+            this.Load += new System.EventHandler(this.ManagePeopleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
             this.PersonContext.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbNumberFilter)).EndInit();

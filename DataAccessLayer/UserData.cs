@@ -47,12 +47,14 @@ namespace DataAccessLayer
             string QUERY = @"
                UPDATE [dbo].[Users]
                SET [UserName] = @Username
-                  ,[Password] = @Password
+                  ,[PasswordHash] = @PasswordHash
+                  ,[Salt] = @Salt
                   ,[IsActive] = @IsActive
                WHERE UserId = @UserId";
             SqlCommand command = new SqlCommand(QUERY, connection);
             command.Parameters.AddWithValue("@Username", user.UserName);
-            command.Parameters.AddWithValue("@Password", user.Password);
+            command.Parameters.AddWithValue("@PasswordHash", user.PasswordHash);
+            command.Parameters.AddWithValue("@Salt", user.Salt);
             command.Parameters.AddWithValue("@IsActive", user.IsActive);
             command.Parameters.AddWithValue("@UserId", user.UserId);
 
@@ -74,7 +76,7 @@ namespace DataAccessLayer
 
             return affectedRows > 0;
         }
-        public static int? AddUserGetId(int personId, string username, string password, bool isActive)
+        public static int? AddUserGetId(int personId, string username, string passwordHash, string salt, bool isActive)
         {
 
             int? userId = null;
@@ -83,18 +85,21 @@ namespace DataAccessLayer
                         INSERT INTO [dbo].[Users]
                                     ([PersonID]
                                     ,[UserName]
-                                    ,[Password]
+                                    ,[PasswordHash]
+                                    ,[Salt]
                                     ,[IsActive])
                                 VALUES
                                     (@PersonId
                                     ,@UserName
-                                    ,@Password
+                                    ,@PasswordHash
+                                    ,@Salt
                                     ,@IsActive);
                         SELECT SCOPE_IDENTITY();";
             SqlCommand command = new SqlCommand(QUERY, connection);
             command.Parameters.AddWithValue("@PersonId", personId);
             command.Parameters.AddWithValue("@UserName", username);
-            command.Parameters.AddWithValue("@Password", password);
+            command.Parameters.AddWithValue("@PasswordHash", passwordHash);
+            command.Parameters.AddWithValue("@Salt", salt);
             command.Parameters.AddWithValue("@IsActive", isActive);
 
 
@@ -124,11 +129,7 @@ namespace DataAccessLayer
             DataTable dataTable = new DataTable();
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);
             string QUERY = @"
-                            SELECT  [UserID]
-                                    ,[PersonID]
-                                    ,[UserName]
-                                    ,[Password]
-                                    ,[IsActive]
+                            SELECT  *
                             FROM [dbo].[Users]
                             WHERE UserID = @UserID";
             SqlCommand command = new SqlCommand(QUERY, connection);
@@ -153,18 +154,17 @@ namespace DataAccessLayer
             }
             return dataTable.Rows[0];
         }
-        public static int? GetUserId(string username, string password)
+        public static int? GetUserId(string username)
         {
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);
             string QUERY = @"
                         SELECT [UserID]
                         FROM [DVLD].[dbo].[Users]
-                        WHERE Username = @username
-                            AND Password = @password";
+                        WHERE Username = @username";
             int? UserId = null;
             SqlCommand command = new SqlCommand(QUERY, connection);
             command.Parameters.AddWithValue("@username", username);
-            command.Parameters.AddWithValue("@password", password);
+
             try
             {
                 connection.Open();
@@ -186,7 +186,7 @@ namespace DataAccessLayer
             return UserId;
         }
 
-        public static bool IsActive(string username, string password)
+        public static bool IsActive(string username)
         {
             DataTable dataTable = new DataTable();
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);
@@ -194,13 +194,12 @@ namespace DataAccessLayer
                         SELECT 1
                         FROM [DVLD].[dbo].[Users]
                         WHERE Username = @username
-                            AND Password = @password
                             AND IsActive = 1";
             bool isActive = false;
 
             SqlCommand command = new SqlCommand(QUERY, connection);
             command.Parameters.AddWithValue("@username", username);
-            command.Parameters.AddWithValue("@password", password);
+
 
             try
             {
@@ -229,10 +228,7 @@ namespace DataAccessLayer
             DataTable dataTable = new DataTable();
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);
             string QUERY = @"
-                            SELECT  [UserID]
-                                    ,[PersonID]
-                                    ,[UserName]
-                                    ,[IsActive]
+                            SELECT  *
                             FROM [dbo].[Users]
                             WHERE IsActive = @IsActive";
             SqlCommand command = new SqlCommand(QUERY, connection);
@@ -257,16 +253,42 @@ namespace DataAccessLayer
             }
             return dataTable;
         }
+        public static DataRow GetUserByUsername(string username)
+        {
+            DataTable dataTable = new DataTable();
+            SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+            string QUERY = @"
+                            SELECT  *
+                            FROM [dbo].[Users]
+                            WHERE Username = @username";
+            SqlCommand command = new SqlCommand(QUERY, connection);
+            command.Parameters.AddWithValue("@username", username);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dataTable.Load(reader);
+                }
+
+            }
+            catch (Exception e)
+            {
+                // !!!
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dataTable.Rows.Count == 1 ? dataTable.Rows[0] : null;
+        }
         public static DataTable GetUsersDataTable()
         {
             DataTable dataTable = new DataTable();
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);
             string QUERY = @"
-                            SELECT  [UserID]
-                                    ,[PersonID]
-                                    ,[UserName]
-                                    ,[Password]
-                                    ,[IsActive]
+                            SELECT  *
                             FROM [dbo].[Users]";
             SqlCommand command = new SqlCommand(QUERY, connection);
             try

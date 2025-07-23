@@ -133,7 +133,10 @@ namespace Winform_UI.Forms
             if (personId != null)
             {
                 MessageBox.Show("Added!", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                onPersonAdded.Invoke((object)this, (int)personId);
+                if (onPersonAdded != null)
+                {
+                    onPersonAdded.Invoke(this, (int)personId);
+                }
                 return; 
             }
             else

@@ -66,7 +66,7 @@ namespace Winform_UI
             }
             
 
-            if (!UserManager.IsActive(username, password))
+            if (!UserManager.IsActive(username))
             {
                 MessageBox.Show("This account is deactived", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -85,7 +85,7 @@ namespace Winform_UI
                 tbUsername.Text = string.Empty;
                 tbPassword.Text = string.Empty;
             }
-            int UserId = (int)UserManager.GetUserId(username, password);
+            int UserId = (int)UserManager.GetUserId(username);
             this.Hide();
             Form mainForm = new MainForm(UserId);
             mainForm.Closed += (s, args) => this.Show();

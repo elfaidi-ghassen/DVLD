@@ -175,7 +175,10 @@ namespace Winform_UI
 
         }
 
+        private void ManagePeopleForm_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 
