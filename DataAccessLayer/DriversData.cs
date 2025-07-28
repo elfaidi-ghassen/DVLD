@@ -95,6 +95,39 @@ namespace DataAccessLayer
             }
             return dataTable.Rows.Count == 1 ? dataTable.Rows[0] : null;
         }
+        public static DataRow GetDataRowByDriverId(int DriverId)
+        {
+            DataTable dataTable = new DataTable();
+            SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+            string QUERY = @"
+                            SELECT [DriverID]
+                           ,[PersonID]
+                           ,[CreatedByUserID]
+                           ,[CreatedDate]
+                        FROM [Drivers]
+                        WHERE DriverId = @DriverId";
+            SqlCommand command = new SqlCommand(QUERY, connection);
+            command.Parameters.AddWithValue("@DriverId", DriverId);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dataTable.Load(reader);
+                }
+
+            }
+            catch (Exception e)
+            {
+                // !!!
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dataTable.Rows.Count == 1 ? dataTable.Rows[0] : null;
+        }
         public static bool PersonIsDriver(int PersonID)
         {
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);

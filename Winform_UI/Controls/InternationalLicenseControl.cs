@@ -10,58 +10,52 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Util;
 
-namespace Winform_UI.Controls
+namespace Winform_UI.Forms.InternationalLicense
 {
-    public partial class DrivingLicenseControl : UserControl
+    public partial class InternationalLicenseControl : UserControl
     {
-        public DrivingLicenseControl()
+        public InternationalLicenseControl()
         {
             InitializeComponent();
         }
-        private void LoadInfo(DrivingLicenseCard info)
+
+        private void labelNationalNo_Click(object sender, EventArgs e)
         {
-            labelClass.Text = info.ClassTitle;
+
+        }
+        private void LoadInfo(InternationalDrivingLicenseCard info)
+        {
             labelName.Text = info.FullName;
             labelDateOfBirth.Text = info.DateOfBirth.ToString();
             labelLicenseID.Text = info.LicenseID.ToString();
             labelNationalNo.Text = info.NationalNo.ToString();
             labelGender.Text = info.Gender.ToString();
             labelIssueDate.Text = info.IssueDate.ToShortDateString();
-            labelIssueReason.Text = info.IssueReason.ToString();
-            labelNotes.Text = info.Notes == null ? "None" : info.Notes.ToString();
             labelIsActive.Text = info.IsActive ? "Active" : "Inactive";
             labelDateOfBirth.Text = info.DateOfBirth.ToShortDateString();
             labelDriverID.Text = info.DriverID.ToString();
             labelExpDate.Text = info.ExpirationDate.ToShortDateString();
-            labelIsDetained.Text = info.IsDetained ? "Yes" : "No";
             pictureBox1.ImageLocation = info.PicturePath;
-
-        }
-        public void LoadInfo(int LocalAppId)
-        {
-            DrivingLicenseCard info =
-                DrivingLicenseManager.GetLicenseCardInfo(LocalAppId);
-            LoadInfo(info);
+            labelInternationalID.Text = info.InternationalLicenseID.ToString();
+            labelAppId.Text = info.AppId.ToString();
         }
 
         public void LoadInfoByLicenseID(int licenseID)
         {
-            DrivingLicenseCard info = DrivingLicenseManager
-                .GetLicenseCardInfoListByLicenseID(licenseID);
+            InternationalDrivingLicenseCard info = InternationalLicenseManager
+                .GetInterLicenseCardInfoByLicenseID(licenseID);
             LoadInfo(info);
+        }
+
+
+        private void label4_Click(object sender, EventArgs e)
+        {
 
         }
 
         private void guna2GroupBox1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void DrivingLicenseControl_Load(object sender, EventArgs e)
-        {
-
-            
-        
         }
     }
 }

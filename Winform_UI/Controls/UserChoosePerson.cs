@@ -45,7 +45,8 @@ namespace Winform_UI.Controls
                     }
                     this.ChosenId = person.PersonID;
                     this.personInfo1.LoadPerson((int)ChosenId);
-                    OnPersonSelect.Invoke((int)ChosenId);
+                    if (OnPersonSelect != null) 
+                        OnPersonSelect.Invoke((int)ChosenId);
 
                     break;
                 case "Person ID":

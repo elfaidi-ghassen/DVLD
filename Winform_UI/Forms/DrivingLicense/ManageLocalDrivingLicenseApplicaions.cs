@@ -403,7 +403,10 @@ namespace Winform_UI.Forms.DrivingLicense
         private void showPersonLicenseHisotryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int selectedAppId = (int)dgvData.CurrentRow.Cells[0].Value;
-            new ShowDrivingLicenseHistoryForm(selectedAppId).ShowDialog();
+            int personID = LocalDLApplicationManager
+                        .GetApplicationByLocalId(selectedAppId).PersonID;
+
+            new ShowDrivingLicenseHistoryForm(personID).ShowDialog();
 
 
         }

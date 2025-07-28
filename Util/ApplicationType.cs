@@ -8,7 +8,8 @@ namespace Models
 {
     public enum enApplicationType
     {
-        NewDrivingLicenseService = 1
+        NewDrivingLicenseService = 1,
+        InternationalLicense = 6
     }   
     public class ApplicationType
     {

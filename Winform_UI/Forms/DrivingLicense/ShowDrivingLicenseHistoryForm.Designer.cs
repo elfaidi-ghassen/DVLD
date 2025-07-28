@@ -77,10 +77,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1086, 788);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.licensesHistory1);
-            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.personInfo1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.labelTitle);
             this.Name = "ShowDrivingLicenseHistoryForm";
             this.Text = "ShowDrivingLicenseHistoryForm";
             this.Load += new System.EventHandler(this.ShowDrivingLicenseHistoryForm_Load);

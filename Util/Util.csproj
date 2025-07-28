@@ -48,6 +48,7 @@
     <Compile Include="Driver.cs" />
     <Compile Include="DriverView.cs" />
     <Compile Include="DrivingLicenseCard.cs" />
+    <Compile Include="InternationalDrivingLicenseCard.cs" />
     <Compile Include="PasswordHasher.cs" />
     <Compile Include="TestAppointment.cs" />
     <Compile Include="Cache.cs" />

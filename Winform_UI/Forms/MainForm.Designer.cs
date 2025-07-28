@@ -35,15 +35,15 @@
             this.drivingLicenseServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDrivingLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.internationalLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localLicenseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.internationalLicenseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.internationalLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.internationalLicenseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,9 +113,16 @@
             // localLicenseToolStripMenuItem
             // 
             this.localLicenseToolStripMenuItem.Name = "localLicenseToolStripMenuItem";
-            this.localLicenseToolStripMenuItem.Size = new System.Drawing.Size(279, 42);
+            this.localLicenseToolStripMenuItem.Size = new System.Drawing.Size(370, 42);
             this.localLicenseToolStripMenuItem.Text = "Local License";
             this.localLicenseToolStripMenuItem.Click += new System.EventHandler(this.localLicenseToolStripMenuItem_Click);
+            // 
+            // internationalLicenseToolStripMenuItem
+            // 
+            this.internationalLicenseToolStripMenuItem.Name = "internationalLicenseToolStripMenuItem";
+            this.internationalLicenseToolStripMenuItem.Size = new System.Drawing.Size(370, 42);
+            this.internationalLicenseToolStripMenuItem.Text = "International License";
+            this.internationalLicenseToolStripMenuItem.Click += new System.EventHandler(this.internationalLicenseToolStripMenuItem_Click);
             // 
             // manageApplicationsToolStripMenuItem
             // 
@@ -129,17 +136,23 @@
             // localLicenseToolStripMenuItem1
             // 
             this.localLicenseToolStripMenuItem1.Name = "localLicenseToolStripMenuItem1";
-            this.localLicenseToolStripMenuItem1.Size = new System.Drawing.Size(279, 42);
+            this.localLicenseToolStripMenuItem1.Size = new System.Drawing.Size(370, 42);
             this.localLicenseToolStripMenuItem1.Text = "Local License";
             this.localLicenseToolStripMenuItem1.Click += new System.EventHandler(this.localLicenseToolStripMenuItem1_Click);
+            // 
+            // internationalLicenseToolStripMenuItem1
+            // 
+            this.internationalLicenseToolStripMenuItem1.Name = "internationalLicenseToolStripMenuItem1";
+            this.internationalLicenseToolStripMenuItem1.Size = new System.Drawing.Size(370, 42);
+            this.internationalLicenseToolStripMenuItem1.Text = "International License";
             // 
             // peopleToolStripMenuItem
             // 
             this.peopleToolStripMenuItem.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.peopleToolStripMenuItem.Image = global::Winform_UI.Properties.Resources.group;
             this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
-            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(167, 73);
-            this.peopleToolStripMenuItem.Text = "People";
+            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(285, 73);
+            this.peopleToolStripMenuItem.Text = "People Directory";
             this.peopleToolStripMenuItem.Click += new System.EventHandler(this.peopleToolStripMenuItem_Click);
             // 
             // driversToolStripMenuItem
@@ -174,22 +187,9 @@
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(270, 42);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(212, 42);
             this.logToolStripMenuItem.Text = "Log out";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
-            // 
-            // internationalLicenseToolStripMenuItem
-            // 
-            this.internationalLicenseToolStripMenuItem.Name = "internationalLicenseToolStripMenuItem";
-            this.internationalLicenseToolStripMenuItem.Size = new System.Drawing.Size(370, 42);
-            this.internationalLicenseToolStripMenuItem.Text = "International License";
-            this.internationalLicenseToolStripMenuItem.Click += new System.EventHandler(this.internationalLicenseToolStripMenuItem_Click);
-            // 
-            // internationalLicenseToolStripMenuItem1
-            // 
-            this.internationalLicenseToolStripMenuItem1.Name = "internationalLicenseToolStripMenuItem1";
-            this.internationalLicenseToolStripMenuItem1.Size = new System.Drawing.Size(370, 42);
-            this.internationalLicenseToolStripMenuItem1.Text = "International License";
             // 
             // MainForm
             // 

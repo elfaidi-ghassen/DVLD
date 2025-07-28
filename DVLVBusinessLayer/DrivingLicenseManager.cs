@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Util;
@@ -11,6 +12,29 @@ namespace DVLVBusinessLayer
 {
     public class DrivingLicenseManager
     {
+        public static int? GetDriverID(int localLicenseID)
+        {
+            return DrivingLicenseData.GetDriverId(localLicenseID);
+        }
+        public static List<enLicenseClass> GetDriverClasses(int driverID)
+        {
+            List<enLicenseClass> classes = new List<enLicenseClass>();
+            foreach (DataRow row in DrivingLicenseData.GetDriverClasses(driverID).Rows)
+            {
+                int licenseClassID = Convert.ToInt32(row["LicenseClass"]);
+                classes.Add((enLicenseClass)licenseClassID);
+            }
+            return classes;
+        }
+        public static bool LicenseExists(int localLicenseId)
+        {
+            return DrivingLicenseData.LicenseExists(localLicenseId);
+        }
+        public static DrivingLicenseCard GetLicenseCardInfoListByLicenseID(int licenseID)
+        {
+            return RowToLicenseCard(
+                DrivingLicenseData.GetLicenseCardInfoListByLicenseID(licenseID));
+        }
         public static List<DrivingLicenseCard> GetLicenseCardInfoListByPersonID(int personID)
         {
             List<DrivingLicenseCard> infos = new List<DrivingLicenseCard>();
@@ -32,7 +56,9 @@ namespace DVLVBusinessLayer
             int licenseID = Convert.ToInt32(row["LicenseID"]);
             int applicationID = Convert.ToInt32(row["ApplicationID"]);
             int driverID = Convert.ToInt32(row["DriverID"]);
-            string licenseClass = row["LicenseClass"].ToString();
+            string licenseClassTitle = row["ClassName"].ToString();
+            enLicenseClass licenseClass =
+                (enLicenseClass)Convert.ToInt32(row["LicenseClassID"]);
             DateTime issueDate = Convert.ToDateTime(row["IssueDate"]);
             DateTime expirationDate = Convert.ToDateTime(row["ExpirationDate"]);
             string notes = row["Notes"] == DBNull.Value ? null : row["Notes"].ToString();
@@ -53,6 +79,7 @@ namespace DVLVBusinessLayer
                 licenseID,
                 applicationID,
                 driverID,
+                licenseClassTitle,
                 licenseClass,
                 issueDate,
                 expirationDate,

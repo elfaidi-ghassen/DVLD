@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelTitle = new System.Windows.Forms.Label();
             this.dgvData = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.labelCountRecords = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drivingLicenseApplicationForm1 = new Winform_UI.Controls.DrivingLicenseApplicationForm();
             this.applicationInfo1 = new Winform_UI.Controls.ApplicationInfo();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
@@ -59,31 +59,31 @@
             // 
             // dgvData
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvData.BackgroundColor = System.Drawing.Color.White;
             this.dgvData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvData.ColumnHeadersHeight = 40;
             this.dgvData.ContextMenuStrip = this.contextMenuStrip1;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvData.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvData.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvData.EnableHeadersVisualStyles = false;
             this.dgvData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvData.Location = new System.Drawing.Point(38, 717);
@@ -117,6 +117,29 @@
             this.dgvData.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvData.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
+            this.takeTestToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(157, 68);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(156, 32);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // takeTestToolStripMenuItem
+            // 
+            this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(156, 32);
+            this.takeTestToolStripMenuItem.Text = "Take test";
+            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -170,29 +193,6 @@
             this.guna2Button2.Text = "Add";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem,
-            this.takeTestToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 101);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // takeTestToolStripMenuItem
-            // 
-            this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
-            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
-            this.takeTestToolStripMenuItem.Text = "Take test";
-            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
-            // 
             // drivingLicenseApplicationForm1
             // 
             this.drivingLicenseApplicationForm1.Location = new System.Drawing.Point(41, 443);
@@ -222,6 +222,7 @@
             this.Controls.Add(this.drivingLicenseApplicationForm1);
             this.Controls.Add(this.applicationInfo1);
             this.Name = "TestAppointmentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TestAppointment";
             this.Load += new System.EventHandler(this.TestAppointmentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();

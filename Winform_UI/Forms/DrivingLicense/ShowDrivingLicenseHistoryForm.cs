@@ -16,12 +16,9 @@ namespace Winform_UI.Forms.DrivingLicense
     {
 
         private int LocalAppId { get; set; }
-        public ShowDrivingLicenseHistoryForm(int localAppId)
+        public ShowDrivingLicenseHistoryForm(int personID)
         {
             InitializeComponent();
-            this.LocalAppId = localAppId;
-            int personID = LocalDLApplicationManager
-                .GetApplicationByLocalId(localAppId).PersonID;
             personInfo1.LoadPerson(personID);
             licensesHistory1.LoadPerson(personID);
         }

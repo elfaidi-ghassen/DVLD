@@ -64,6 +64,12 @@
     <Compile Include="Controls\DrivingLicenseControl.Designer.cs">
       <DependentUpon>DrivingLicenseControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\InternationalApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InternationalApplicationInfo.Designer.cs">
+      <DependentUpon>InternationalApplicationInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LicensesHistory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -167,6 +173,24 @@
     <Compile Include="Forms\DrivingLicense\ViewLocalDrivingLicenseApplicatiionForm.Designer.cs">
       <DependentUpon>ViewLocalDrivingLicenseApplicatiionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InternationalLicense\AddInternationalDrivingLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InternationalLicense\AddInternationalDrivingLicenseForm.Designer.cs">
+      <DependentUpon>AddInternationalDrivingLicenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InternationalLicenseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InternationalLicenseControl.Designer.cs">
+      <DependentUpon>InternationalLicenseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InternationalLicense\ShowInternationalLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InternationalLicense\ShowInternationalLicenseForm.Designer.cs">
+      <DependentUpon>ShowInternationalLicenseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\User\AddUpdateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +274,9 @@
     <EmbeddedResource Include="Controls\DrivingLicenseControl.resx">
       <DependentUpon>DrivingLicenseControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\InternationalApplicationInfo.resx">
+      <DependentUpon>InternationalApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\LicensesHistory.resx">
       <DependentUpon>LicensesHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +327,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrivingLicense\ViewLocalDrivingLicenseApplicatiionForm.resx">
       <DependentUpon>ViewLocalDrivingLicenseApplicatiionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InternationalLicense\AddInternationalDrivingLicenseForm.resx">
+      <DependentUpon>AddInternationalDrivingLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\InternationalLicenseControl.resx">
+      <DependentUpon>InternationalLicenseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InternationalLicense\ShowInternationalLicenseForm.resx">
+      <DependentUpon>ShowInternationalLicenseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Person\AddUpdatePerson.resx">
       <DependentUpon>AddUpdatePerson.cs</DependentUpon>

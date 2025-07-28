@@ -49,6 +49,7 @@
     <Compile Include="DriverManager.cs" />
     <Compile Include="DrivingLicenseManager.cs" />
     <Compile Include="DrivingTestData.cs" />
+    <Compile Include="InternationalLicenseManager.cs" />
     <Compile Include="LocalDLApplicationManager.cs" />
     <Compile Include="LicenseClassManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

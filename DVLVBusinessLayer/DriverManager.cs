@@ -40,6 +40,12 @@ namespace DVLVBusinessLayer
             return DataRowToDriver(DriversData.GetDataRowByPersonID(PersonID));
 
         }
+        public static Driver GetDriverByDriverId(int driverId)
+        {
+            return DataRowToDriver(DriversData.GetDataRowByDriverId(driverId));
+
+        }
+
         private static Driver DataRowToDriver(DataRow row)
         {
             if (row == null)

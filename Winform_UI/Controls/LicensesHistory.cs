@@ -32,6 +32,13 @@ namespace Winform_UI.Controls
             dgvLocal.Columns.Add("col4", "Issue Date");
             dgvLocal.Columns.Add("col5", "Expiration Date");
             dgvLocal.Columns.Add("col6", "Active Status");
+
+            dgvInternational.Columns.Add("col1", "Inter. L.ID");
+            dgvInternational.Columns.Add("col2", "Application ID");
+            dgvInternational.Columns.Add("col3", "L. License ID");
+            dgvInternational.Columns.Add("col4", "Issue Date");
+            dgvInternational.Columns.Add("col5", "Expiration Date");
+            dgvInternational.Columns.Add("col6", "Is Active");
         }
 
         public void LoadPerson(int personID)
@@ -72,7 +79,6 @@ namespace Winform_UI.Controls
         }
         private void LoadLocalLicenses(int? personID)
         {
-            UpdateLocalRowCount();
             dgvLocal.Rows.Clear();
             if (personID == null) { return; }
             foreach (DrivingLicenseCard info in 
@@ -86,14 +92,29 @@ namespace Winform_UI.Controls
                     info.ExpirationDate,
                     info.IsActive
                 );
+            UpdateLocalRowCount();
             }
         }
         private void LoadInternationalLicenses(int? personID)
         {
-            UpdateInterRowCount();
             if (personID == null) { return; }
-
-            // TODO
+            
+            
+                
+            foreach(InternationalDrivingLicenseCard info in InternationalLicenseManager
+                .GetInterLicenseCardInfoListByPersonID((int)personID))
+            {
+                dgvInternational.Rows.Add(
+                            info.LicenseID,
+                            info.AppId,
+                            info.LicenseID,
+                            info.IssueDate,
+                            info.ExpirationDate,
+                            info.IsActive ? "Active" : "Inactive"
+                    );
+            }
+        UpdateInterRowCount();
+            
         }
 
         private void tabLocal_Click(object sender, EventArgs e)

@@ -12,7 +12,8 @@ namespace Util
         public int LicenseID { get; set; }
         public int ApplicationID { get; set; }
         public int DriverID { get; set; }
-        public string LicenseClass { get; set; }
+        public string LicenseClassTitle { get; set; }
+        public enLicenseClass LicenseClass { get; set; }
         public DateTime IssueDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public string Notes { get; set; }
@@ -34,7 +35,8 @@ namespace Util
     int licenseID,
     int applicationID,
     int driverID,
-    string licenseClass,
+    string licenseClassTitle,
+    enLicenseClass licenseClass,
     DateTime issueDate,
     DateTime expirationDate,
     string notes,
@@ -53,7 +55,8 @@ namespace Util
             LicenseID = licenseID;
             ApplicationID = applicationID;
             DriverID = driverID;
-            LicenseClass = licenseClass;
+            LicenseClassTitle = licenseClassTitle;
+            this.LicenseClass = licenseClass;
             IssueDate = issueDate;
             ExpirationDate = expirationDate;
             Notes = notes;

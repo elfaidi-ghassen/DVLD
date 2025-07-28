@@ -11,6 +11,7 @@ using Winform_UI.Debug;
 using Winform_UI.Forms;
 using Winform_UI.Forms.Driver;
 using Winform_UI.Forms.DrivingLicense;
+using Winform_UI.Forms.InternationalLicense;
 
 namespace Winform_UI
 {
@@ -87,7 +88,7 @@ namespace Winform_UI
 
         private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("not implemented yet");
+            new AddInternationalDrivingLicenseForm(UserId).ShowDialog();
 
         }
     }

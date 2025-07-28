@@ -7,16 +7,197 @@
     {
     public class DrivingLicenseData
     {
-
-
-        public static DataTable GetLicensesDataTableByPerson(int personID)
+        public static DataTable GetDriverClasses(int driverId)
         {
+            SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+            string QUERY = @"
+                        SELECT LicenseClass
+                        FROM Licenses
+                        WHERE driverId = @driverId
+                        ";
+
+            SqlCommand command = new SqlCommand(QUERY, connection);
+            command.Parameters.AddWithValue("driverId", driverId);
+            DataTable result = new DataTable();
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    result.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception if needed
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return result;
+        }
+        public static int? GetDriverId(int localLicenseId)
+        {
+            int? driverID = null;
+            SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+            string QUERY = @"
+                            SELECT driverId
+                            FROM Licenses
+                            WHERE LicenseID = @localLicenseID";
+            SqlCommand command = new SqlCommand(QUERY, connection);
+            command.Parameters.AddWithValue("@localLicenseID", localLicenseId);
+
+
+            try
+            {
+
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null && int.TryParse(result.ToString(), out int id))
+                {
+                    driverID = id;
+                }
+            }
+            catch (Exception e)
+            {
+                // ---
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return driverID;
+        }
+        public static bool LicenseExists(int localLicenseId)
+        {
+            bool licenseExists = false;
+            SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+            string QUERY = @"
+                            SELECT 1 AS LicenseExists
+                            FROM Licenses
+                            WHERE LicenseID = @localLicenseID";
+            SqlCommand command = new SqlCommand(QUERY, connection);
+            command.Parameters.AddWithValue("@localLicenseID", localLicenseId);
+
+
+            try
+            {
+
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null && int.TryParse(result.ToString(), out int HasLicense))
+                {
+                    licenseExists = (HasLicense == 1);
+                }
+            }
+            catch (Exception e)
+            {
+                // ---
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return licenseExists;
+        }
+        public static DataRow GetLicenseCardInfoListByLicenseID(int licenseID)
+        {
+                SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+
+                string QUERY = @"
+                        SELECT Licenses.[LicenseID]
+                                ,Licenses.[ApplicationID]
+                                ,Licenses.[DriverID]
+                                ,Licenses.[LicenseClass] as LicenseClassID
+                                ,Licenses.[IssueDate]
+                                ,Licenses.[ExpirationDate]
+                                ,Licenses.[Notes]
+                                ,Licenses.[PaidFees]
+                                ,Licenses.[IsActive]
+                                ,Licenses.[IssueReason]
+                                ,Licenses.[CreatedByUserID]
+                                ,LocalDrivingLicenseApplications.[LocalDrivingLicenseApplicationID]
+                                ,[ClassName]
+                                , CONCAT_WS(' ',
+                                    FirstName,
+                                    SecondName,
+                                    ThirdName,
+                                    LastName) AS FullName
+                                , NationalNo
+                                , Gendor
+                                , DateOfBirth
+                                , ImagePath
+                                , CASE 
+                                      WHEN EXISTS (
+                                         SELECT 1 FROM DetainedLicenses 
+                                         WHERE LicenseID = Licenses.LicenseID AND IsReleased = 0
+                                      ) THEN 1 ELSE 0
+                                  END  AS isDetained
+                            FROM Licenses
+                            JOIN [LocalDrivingLicenseApplications]
+                                ON [LocalDrivingLicenseApplications].ApplicationID = 
+                                                        Licenses.ApplicationID
+                            JOIN LicenseClasses
+                                ON LicenseClasses.LicenseClassID =
+                                                        LocalDrivingLicenseApplications.LicenseClassID
+                            JOIN Drivers
+                                ON Drivers.DriverID = Licenses.DriverID
+                            JOIN People
+                                ON People.PersonID =
+                                                Drivers.PersonID
+                            WHERE [Licenses].licenseID = @licenseID";
+                
+                SqlCommand command = new SqlCommand(QUERY, connection);
+                command.Parameters.AddWithValue("@licenseID", licenseID);
+
+                DataTable result = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        result.Load(reader);
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception if needed
+
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+                if (result.Rows.Count == 1)
+                {
+                    return result.Rows[0];
+                }
+                else
+                {
+                    return null;
+
+                }
+            }
+            public static DataTable GetLicensesDataTableByPerson(int personID)
+            {
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);
             string QUERY = @"
                     SELECT Licenses.[LicenseID]
                             ,Licenses.[ApplicationID]
                             ,Licenses.[DriverID]
-                            ,Licenses.[LicenseClass]
+                            ,Licenses.[LicenseClass] as LicenseClassID
                             ,Licenses.[IssueDate]
                             ,Licenses.[ExpirationDate]
                             ,Licenses.[Notes]
@@ -25,7 +206,6 @@
                             ,Licenses.[IssueReason]
                             ,Licenses.[CreatedByUserID]
                             ,LocalDrivingLicenseApplications.[LocalDrivingLicenseApplicationID]
-                            ,LocalDrivingLicenseApplications.[LicenseClassID]
                             ,[ClassName]
                             , CONCAT_WS(' ',
                                 FirstName,
@@ -91,7 +271,7 @@
                     SELECT Licenses.[LicenseID]
                             ,Licenses.[ApplicationID]
                             ,Licenses.[DriverID]
-                            ,Licenses.[LicenseClass]
+                            ,Licenses.[LicenseClass] as LicenseClassID
                             ,Licenses.[IssueDate]
                             ,Licenses.[ExpirationDate]
                             ,Licenses.[Notes]
@@ -100,7 +280,6 @@
                             ,Licenses.[IssueReason]
                             ,Licenses.[CreatedByUserID]
                             ,LocalDrivingLicenseApplications.[LocalDrivingLicenseApplicationID]
-                            ,LocalDrivingLicenseApplications.[LicenseClassID]
                             ,[ClassName]
                             , CONCAT_WS(' ',
                                 FirstName,
