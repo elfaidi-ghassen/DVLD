@@ -81,7 +81,6 @@
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(233, 73);
             this.applicationsToolStripMenuItem.Text = "Applications";
-            this.applicationsToolStripMenuItem.Click += new System.EventHandler(this.applicationsToolStripMenuItem_Click);
             // 
             // manageApplicationTypsToolStripMenuItem
             // 
@@ -150,7 +149,6 @@
             this.internationalLicenseToolStripMenuItem1.Name = "internationalLicenseToolStripMenuItem1";
             this.internationalLicenseToolStripMenuItem1.Size = new System.Drawing.Size(370, 42);
             this.internationalLicenseToolStripMenuItem1.Text = "International License";
-            this.internationalLicenseToolStripMenuItem1.Click += new System.EventHandler(this.internationalLicenseToolStripMenuItem1_Click);
             // 
             // peopleToolStripMenuItem
             // 
@@ -212,7 +210,6 @@
             this.renewDrivingLicenseToolStripMenuItem.Name = "renewDrivingLicenseToolStripMenuItem";
             this.renewDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(391, 42);
             this.renewDrivingLicenseToolStripMenuItem.Text = "Renew Driving License";
-            this.renewDrivingLicenseToolStripMenuItem.Click += new System.EventHandler(this.renewDrivingLicenseToolStripMenuItem_Click);
             // 
             // MainForm
             // 
