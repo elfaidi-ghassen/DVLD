@@ -177,12 +177,6 @@ namespace Winform_UI.Forms.DrivingLicense
         {
             switch (StringToFilterOption(filterCombo.Text))
             {
-                //case enLocalLicenseFilterOption.NationalNoUserID:
-                //case enLocalLicenseFilterOption.PersonID:
-                //    HideAllFilterInputs();
-                //    filterNumber.Visible = true;
-                //    break;
-
                 case enLocalLicenseFilterOption.NationalNo:
                     HideAllFilterInputs();
                     filterTextBox.Visible = true;
@@ -408,6 +402,11 @@ namespace Winform_UI.Forms.DrivingLicense
 
             new ShowDrivingLicenseHistoryForm(personID).ShowDialog();
 
+
+        }
+
+        private void filterNumber_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

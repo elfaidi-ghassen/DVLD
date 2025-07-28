@@ -185,6 +185,12 @@
     <Compile Include="Controls\InternationalLicenseControl.Designer.cs">
       <DependentUpon>InternationalLicenseControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InternationalLicense\ListInternationalLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InternationalLicense\ListInternationalLicenseForm.Designer.cs">
+      <DependentUpon>ListInternationalLicenseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InternationalLicense\ShowInternationalLicenseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,9 @@
     <EmbeddedResource Include="Controls\InternationalLicenseControl.resx">
       <DependentUpon>InternationalLicenseControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InternationalLicense\ListInternationalLicenseForm.resx">
+      <DependentUpon>ListInternationalLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InternationalLicense\ShowInternationalLicenseForm.resx">
       <DependentUpon>ShowInternationalLicenseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -463,6 +472,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\history1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DVLD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DVLD.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
