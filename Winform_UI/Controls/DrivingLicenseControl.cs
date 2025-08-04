@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Util;
+using Winform_UI.Properties;
 
 namespace Winform_UI.Controls
 {
@@ -17,6 +18,7 @@ namespace Winform_UI.Controls
         public DrivingLicenseControl()
         {
             InitializeComponent();
+            pictureBox1.Image = Resources.driver;
         }
         private void LoadInfo(DrivingLicenseCard info)
         {
