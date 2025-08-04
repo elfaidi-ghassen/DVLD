@@ -37,6 +37,8 @@
             this.numericInput = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.drivingLicenseControl = new Winform_UI.Controls.DrivingLicenseControl();
             this.radLost = new System.Windows.Forms.RadioButton();
+            this.radDamaged = new System.Windows.Forms.RadioButton();
+            this.LostDamagedApplicationControl = new Winform_UI.Controls.ReplaceLostDamagedApplicationForm();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericInput)).BeginInit();
             this.SuspendLayout();
@@ -48,12 +50,13 @@
             this.btnRenew.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRenew.ForeColor = System.Drawing.Color.White;
             this.btnRenew.HoverState.Parent = this.btnRenew;
-            this.btnRenew.Location = new System.Drawing.Point(929, 899);
+            this.btnRenew.Location = new System.Drawing.Point(936, 730);
             this.btnRenew.Name = "btnRenew";
             this.btnRenew.ShadowDecoration.Parent = this.btnRenew;
             this.btnRenew.Size = new System.Drawing.Size(127, 45);
             this.btnRenew.TabIndex = 26;
             this.btnRenew.Text = "Renew";
+            this.btnRenew.Click += new System.EventHandler(this.btnRenew_Click);
             // 
             // btnCancel
             // 
@@ -63,34 +66,37 @@
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.HoverState.Parent = this.btnCancel;
-            this.btnCancel.Location = new System.Drawing.Point(796, 900);
+            this.btnCancel.Location = new System.Drawing.Point(803, 731);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
             this.btnCancel.Size = new System.Drawing.Size(127, 45);
             this.btnCancel.TabIndex = 27;
             this.btnCancel.Text = "Close";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // linkLabelLicense
             // 
             this.linkLabelLicense.AutoSize = true;
             this.linkLabelLicense.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelLicense.Location = new System.Drawing.Point(580, 918);
+            this.linkLabelLicense.Location = new System.Drawing.Point(593, 740);
             this.linkLabelLicense.Name = "linkLabelLicense";
             this.linkLabelLicense.Size = new System.Drawing.Size(187, 26);
             this.linkLabelLicense.TabIndex = 24;
             this.linkLabelLicense.TabStop = true;
             this.linkLabelLicense.Text = "Show new license";
+            this.linkLabelLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLicense_LinkClicked);
             // 
             // linkLabelHistory
             // 
             this.linkLabelHistory.AutoSize = true;
             this.linkLabelHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelHistory.Location = new System.Drawing.Point(318, 918);
+            this.linkLabelHistory.Location = new System.Drawing.Point(331, 740);
             this.linkLabelHistory.Name = "linkLabelHistory";
             this.linkLabelHistory.Size = new System.Drawing.Size(222, 26);
             this.linkLabelHistory.TabIndex = 25;
             this.linkLabelHistory.TabStop = true;
             this.linkLabelHistory.Text = "Show License Hisotry";
+            this.linkLabelHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelHistory_LinkClicked);
             // 
             // btnFind
             // 
@@ -110,7 +116,6 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(18, 22);
             this.label1.Name = "label1";
@@ -121,7 +126,6 @@
             // numericInput
             // 
             this.numericInput.BackColor = System.Drawing.Color.Transparent;
-            this.numericInput.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numericInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.numericInput.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.numericInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -159,8 +163,38 @@
             this.radLost.Name = "radLost";
             this.radLost.Size = new System.Drawing.Size(161, 31);
             this.radLost.TabIndex = 28;
+            this.radLost.TabStop = true;
             this.radLost.Text = "Lost License";
             this.radLost.UseVisualStyleBackColor = true;
+            this.radLost.CheckedChanged += new System.EventHandler(this.radLost_CheckedChanged);
+            // 
+            // radDamaged
+            // 
+            this.radDamaged.AutoSize = true;
+            this.radDamaged.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radDamaged.Location = new System.Drawing.Point(794, 29);
+            this.radDamaged.Name = "radDamaged";
+            this.radDamaged.Size = new System.Drawing.Size(220, 31);
+            this.radDamaged.TabIndex = 28;
+            this.radDamaged.Text = "Damaged License";
+            this.radDamaged.UseVisualStyleBackColor = true;
+            this.radDamaged.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // replaceLostDamagedApplicationForm1
+            // 
+            this.LostDamagedApplicationControl.ApplicationDate = new System.DateTime(((long)(0)));
+            this.LostDamagedApplicationControl.ApplicationFees = null;
+            this.LostDamagedApplicationControl.BackColor = System.Drawing.Color.Transparent;
+            this.LostDamagedApplicationControl.ExpirationDate = new System.DateTime(((long)(0)));
+            this.LostDamagedApplicationControl.Initialized = false;
+            this.LostDamagedApplicationControl.Location = new System.Drawing.Point(13, 544);
+            this.LostDamagedApplicationControl.Name = "replaceLostDamagedApplicationForm1";
+            this.LostDamagedApplicationControl.NewLocalApplicationID = null;
+            this.LostDamagedApplicationControl.OldLicenseID = null;
+            this.LostDamagedApplicationControl.ReplacedLicenseID = null;
+            this.LostDamagedApplicationControl.Size = new System.Drawing.Size(1050, 180);
+            this.LostDamagedApplicationControl.TabIndex = 29;
+            this.LostDamagedApplicationControl.UserId = null;
             // 
             // radioButton1
             // 
@@ -177,8 +211,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 955);
-            this.Controls.Add(this.radioButton1);
+            this.ClientSize = new System.Drawing.Size(1078, 786);
+            this.Controls.Add(this.LostDamagedApplicationControl);
+            this.Controls.Add(this.radDamaged);
             this.Controls.Add(this.radLost);
             this.Controls.Add(this.btnRenew);
             this.Controls.Add(this.btnCancel);
@@ -208,6 +243,8 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown numericInput;
         private Controls.DrivingLicenseControl drivingLicenseControl;
         private System.Windows.Forms.RadioButton radLost;
+        private System.Windows.Forms.RadioButton radDamaged;
+        private Controls.ReplaceLostDamagedApplicationForm LostDamagedApplicationControl;
         private System.Windows.Forms.RadioButton radioButton1;
     }
 }

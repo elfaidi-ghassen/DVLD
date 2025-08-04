@@ -18,7 +18,7 @@ namespace Winform_UI.Controls
         public DateTime ApplicationDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public Decimal? ApplicationFees { get; set; } = null;
-        public int? NewApplicationID { get; set; } = null;
+        public int? NewLocalApplicationID { get; set; } = null;
 
         public int? OldLicenseID { get; set; } = null;
         public int? UserId { get; set; } = null;
@@ -57,8 +57,8 @@ namespace Winform_UI.Controls
             if (OldLicenseID != null)
                 labelOldLicenseID.Text = OldLicenseID.ToString();
 
-            if (NewApplicationID != null)
-                labelAppId.Text = NewApplicationID.ToString();
+            if (NewLocalApplicationID != null)
+                labelAppId.Text = NewLocalApplicationID.ToString();
 
 
             labelCreatedBy.Text = UserManager.GetUserById((int)UserId).UserName;

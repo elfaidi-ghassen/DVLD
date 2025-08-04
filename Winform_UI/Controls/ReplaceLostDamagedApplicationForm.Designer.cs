@@ -63,7 +63,7 @@
             this.guna2GroupBox1.Location = new System.Drawing.Point(3, 3);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(1028, 167);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1052, 167);
             this.guna2GroupBox1.TabIndex = 21;
             this.guna2GroupBox1.Text = "Application";
             // 
@@ -218,7 +218,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "ReplaceLostDamagedApplicationForm";
-            this.Size = new System.Drawing.Size(1036, 180);
+            this.Size = new System.Drawing.Size(1050, 180);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             this.ResumeLayout(false);
