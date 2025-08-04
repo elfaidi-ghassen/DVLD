@@ -97,7 +97,6 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(1044, 463);
             this.guna2GroupBox1.TabIndex = 1;
             this.guna2GroupBox1.Text = "Driving License Info";
-            this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
             // 
             // pictureBox1
             // 
@@ -427,7 +426,6 @@
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "DrivingLicenseControl";
             this.Size = new System.Drawing.Size(1080, 504);
-            this.Load += new System.EventHandler(this.DrivingLicenseControl_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

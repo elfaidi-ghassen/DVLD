@@ -44,10 +44,15 @@ namespace DVLVBusinessLayer
             }
             return infos;
         }
-        public static DrivingLicenseCard GetLicenseCardInfo(int localID)
+        public static DrivingLicenseCard GetLicenseCardInfoByAppId(int localAppID)
         {
             return RowToLicenseCard(
-                DrivingLicenseData.GetLicenseCardRow(localID));
+                DrivingLicenseData.GetLicenseCardRowByAppId(localAppID));
+        }
+        public static DrivingLicenseCard GetLicenseCardInfoByLicenseId(int localID)
+        {
+            return RowToLicenseCard(
+                DrivingLicenseData.GetLicenseCardRowByLicenseId(localID));
         }
 
         public static DrivingLicenseCard RowToLicenseCard(DataRow row)
@@ -118,5 +123,14 @@ namespace DVLVBusinessLayer
                                             IssueReason: IssueReason,
                                             UserID);
         }
+    
+    
+        public static bool DisableDrivingLicense(int licenseID)
+        {
+            return DrivingLicenseData.SetActiveStatusTo(licenseID, false);
+        }
+
+
     }
+
 }

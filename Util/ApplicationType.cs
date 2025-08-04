@@ -9,6 +9,10 @@ namespace Models
     public enum enApplicationType
     {
         NewDrivingLicenseService = 1,
+        RenewLicense = 2,
+        ReplacementForLost = 3,
+        ReplacementForDamaged = 4,
+        ReleaseDetained = 5,
         InternationalLicense = 6
     }   
     public class ApplicationType

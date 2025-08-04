@@ -40,28 +40,21 @@ namespace Winform_UI.Controls
         public void LoadInfo(int LocalAppId)
         {
             DrivingLicenseCard info =
-                DrivingLicenseManager.GetLicenseCardInfo(LocalAppId);
+                DrivingLicenseManager.GetLicenseCardInfoByAppId(LocalAppId);
             LoadInfo(info);
         }
 
-        public void LoadInfoByLicenseID(int licenseID)
+        public bool LoadInfoByLicenseID(int licenseID)
         {
             DrivingLicenseCard info = DrivingLicenseManager
                 .GetLicenseCardInfoListByLicenseID(licenseID);
+            if (info == null)
+            {
+                return false;
+            }
+
             LoadInfo(info);
-
-        }
-
-        private void guna2GroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DrivingLicenseControl_Load(object sender, EventArgs e)
-        {
-
-            
-        
+            return true;
         }
     }
 }

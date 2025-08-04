@@ -44,6 +44,9 @@ namespace Util
             byte[] hash = pbkdf2.GetBytes(hashSize);
             pbkdf2.Dispose();
 
+            // I used FixedTimeEquals because as a protection against timing attacks
+            // although it kind of doesn't make sense to use, because users can't
+            // enter hash values directly...
             return FixedTimeEquals(hash, expectedHash);
         }
     }

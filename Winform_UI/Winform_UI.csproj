@@ -137,6 +137,12 @@
     <Compile Include="Forms\DrivingLicense\ManageLocalDrivingLicenseApplicaions.Designer.cs">
       <DependentUpon>ManageLocalDrivingLicenseApplicaions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DrivingLicense\RenewLocalDrivingLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DrivingLicense\RenewLocalDrivingLicenseForm.Designer.cs">
+      <DependentUpon>RenewLocalDrivingLicenseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DrivingLicense\ScheduleTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,12 @@
     </Compile>
     <Compile Include="Forms\InternationalLicense\ListInternationalLicenseForm.Designer.cs">
       <DependentUpon>ListInternationalLicenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RenewLicenseApp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RenewLicenseApp.Designer.cs">
+      <DependentUpon>RenewLicenseApp.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\InternationalLicense\ShowInternationalLicenseForm.cs">
       <SubType>Form</SubType>
@@ -316,6 +328,9 @@
     <EmbeddedResource Include="Forms\DrivingLicense\ManageLocalDrivingLicenseApplicaions.resx">
       <DependentUpon>ManageLocalDrivingLicenseApplicaions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DrivingLicense\RenewLocalDrivingLicenseForm.resx">
+      <DependentUpon>RenewLocalDrivingLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrivingLicense\ScheduleTestForm.resx">
       <DependentUpon>ScheduleTestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InternationalLicense\ListInternationalLicenseForm.resx">
       <DependentUpon>ListInternationalLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RenewLicenseApp.resx">
+      <DependentUpon>RenewLicenseApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InternationalLicense\ShowInternationalLicenseForm.resx">
       <DependentUpon>ShowInternationalLicenseForm.cs</DependentUpon>
