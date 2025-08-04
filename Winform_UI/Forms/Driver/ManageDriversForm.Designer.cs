@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -35,7 +36,10 @@
             this.dgvData = new Guna.UI2.WinForms.Guna2DataGridView();
             this.labelRecordsCount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel2
@@ -69,6 +73,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvData.ColumnHeadersHeight = 40;
+            this.dgvData.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -137,6 +142,21 @@
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewLicenseHistoryToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(257, 69);
+            // 
+            // viewLicenseHistoryToolStripMenuItem
+            // 
+            this.viewLicenseHistoryToolStripMenuItem.Name = "viewLicenseHistoryToolStripMenuItem";
+            this.viewLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(256, 32);
+            this.viewLicenseHistoryToolStripMenuItem.Text = "View License History";
+            this.viewLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.viewLicenseHistoryToolStripMenuItem_Click);
+            // 
             // ManageDriversForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -150,6 +170,7 @@
             this.Text = "ManageDriversForm";
             this.Load += new System.EventHandler(this.ManageDriversForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,5 +182,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvData;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelRecordsCount;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem viewLicenseHistoryToolStripMenuItem;
     }
 }

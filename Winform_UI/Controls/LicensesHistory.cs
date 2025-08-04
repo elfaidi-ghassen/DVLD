@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Util;
+using Winform_UI.Forms.DrivingLicense;
 
 namespace Winform_UI.Controls
 {
@@ -105,7 +106,7 @@ namespace Winform_UI.Controls
                 .GetInterLicenseCardInfoListByPersonID((int)personID))
             {
                 dgvInternational.Rows.Add(
-                            info.LicenseID,
+                            info.InternationalLicenseID,
                             info.AppId,
                             info.LicenseID,
                             info.IssueDate,
@@ -125,6 +126,14 @@ namespace Winform_UI.Controls
         private void labelInterRecordsNumber_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void viewLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int selectedId = (int)dgvLocal.CurrentRow.Cells[1].Value;
+            int localApp
+                = LocalDLApplicationManager.GetLocalIdByApplicationId(selectedId);
+            new ShowDrivingLicenseForm(localApp).ShowDialog();
         }
     }
 }

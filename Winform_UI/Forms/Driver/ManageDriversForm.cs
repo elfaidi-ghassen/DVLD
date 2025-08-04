@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Util;
+using Winform_UI.Controls;
+using Winform_UI.Forms.DrivingLicense;
 
 namespace Winform_UI.Forms.Driver
 {
@@ -61,6 +63,12 @@ namespace Winform_UI.Forms.Driver
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void viewLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int selectedId = (int)dgvData.CurrentRow.Cells[1].Value;
+            new ShowDrivingLicenseHistoryForm(selectedId).ShowDialog();
         }
     }
 }

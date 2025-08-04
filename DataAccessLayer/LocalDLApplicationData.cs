@@ -49,7 +49,36 @@ namespace DataAccessLayer
 
             return true;
         }
+        public static int GetLocalIdByApplicationId(int appId)
+        {
+            SqlConnection connection = new SqlConnection(Settings.ConnectionString);
+            string QUERY = @"
+                    SELECT LocalDrivingLicenseApplicationID
+                    FROM LocalDrivingLicenseApplications
+                    WHERE ApplicationID = @appId;";
+            int? AppId = null;
+            SqlCommand command = new SqlCommand(QUERY, connection);
+            command.Parameters.AddWithValue("@appId", appId);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    AppId = Convert.ToInt32(reader["LocalDrivingLicenseApplicationID"]);
+                }
 
+            }
+            catch (Exception e)
+            {
+                // !!!
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (int)AppId;
+        }
         public static int GetApplicationIdByLocalId(int localAppId)
         {
             SqlConnection connection = new SqlConnection(Settings.ConnectionString);

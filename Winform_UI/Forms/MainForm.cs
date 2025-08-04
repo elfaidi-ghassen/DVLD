@@ -32,8 +32,7 @@ namespace Winform_UI
 
         private void dEBUGToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DebugForm form = new DebugForm();
-            form.Show();
+
         }
 
 
@@ -100,6 +99,11 @@ namespace Winform_UI
         private void internationalLicenseToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new ListInternationalLicenseForm(UserId).ShowDialog();
+        }
+
+        private void replaceLostLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ReplaceLostDamagedForm(UserId).ShowDialog();
         }
     }
 }
