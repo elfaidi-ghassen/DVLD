@@ -76,6 +76,12 @@
     <Compile Include="Controls\LicensesHistory.Designer.cs">
       <DependentUpon>LicensesHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ReplaceLostDamagedApplicationForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReplaceLostDamagedApplicationForm.Designer.cs">
+      <DependentUpon>ReplaceLostDamagedApplicationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DebugTool\CustomAssert.cs" />
     <Compile Include="Forms\AssertUserInputForm.cs">
       <SubType>Form</SubType>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LicensesHistory.resx">
       <DependentUpon>LicensesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReplaceLostDamagedApplicationForm.resx">
+      <DependentUpon>ReplaceLostDamagedApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AssertUserInputForm.resx">
       <DependentUpon>AssertUserInputForm.cs</DependentUpon>
