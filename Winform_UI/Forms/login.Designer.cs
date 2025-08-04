@@ -38,14 +38,12 @@
             this.icons = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // tbUsername
             // 
             this.tbUsername.AutoRoundedCorners = true;
             this.tbUsername.BorderRadius = 26;
-            this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbUsername.DefaultText = "";
             this.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -71,7 +69,6 @@
             // 
             this.tbPassword.AutoRoundedCorners = true;
             this.tbPassword.BorderRadius = 29;
-            this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbPassword.DefaultText = "";
             this.tbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -98,7 +95,6 @@
             this.btnSignIn.AutoRoundedCorners = true;
             this.btnSignIn.BorderRadius = 21;
             this.btnSignIn.CheckedState.Parent = this.btnSignIn;
-            this.btnSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSignIn.CustomImages.Parent = this.btnSignIn;
             this.btnSignIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(254)))));
             this.btnSignIn.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -150,7 +146,6 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Location = new System.Drawing.Point(566, 317);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 22);
@@ -169,23 +164,11 @@
             this.guna2Panel1.Size = new System.Drawing.Size(493, 495);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(811, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(66, 22);
-            this.linkLabel1.TabIndex = 9;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Debug";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 495);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.cbRememberMe);
@@ -215,7 +198,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private System.Windows.Forms.ImageList icons;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

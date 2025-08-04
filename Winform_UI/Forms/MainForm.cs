@@ -32,8 +32,6 @@ namespace Winform_UI
 
         private void dEBUGToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DebugForm form = new DebugForm();
-            form.Show();
         }
 
 
