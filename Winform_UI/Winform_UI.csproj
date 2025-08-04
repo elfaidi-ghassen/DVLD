@@ -143,6 +143,12 @@
     <Compile Include="Forms\DrivingLicense\RenewLocalDrivingLicenseForm.Designer.cs">
       <DependentUpon>RenewLocalDrivingLicenseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DrivingLicense\ReplaceLostDamagedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DrivingLicense\ReplaceLostDamagedForm.Designer.cs">
+      <DependentUpon>ReplaceLostDamagedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DrivingLicense\ScheduleTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,12 +238,6 @@
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\DebugForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DebugForm.Designer.cs">
-      <DependentUpon>DebugForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\login.cs">
       <SubType>Form</SubType>
@@ -331,6 +331,9 @@
     <EmbeddedResource Include="Forms\DrivingLicense\RenewLocalDrivingLicenseForm.resx">
       <DependentUpon>RenewLocalDrivingLicenseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DrivingLicense\ReplaceLostDamagedForm.resx">
+      <DependentUpon>ReplaceLostDamagedForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrivingLicense\ScheduleTestForm.resx">
       <DependentUpon>ScheduleTestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,9 +378,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DebugForm.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\login.resx">
       <DependentUpon>login.cs</DependentUpon>
