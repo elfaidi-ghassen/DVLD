@@ -26,7 +26,7 @@ namespace Winform_UI
             CustomAssert.That(DriverManager.PersonIsDriver(1024) == false, "#2");
             CustomAssert.That(DriverManager.PersonIsDriver(1025) == true, "#3");
             CustomAssert.That(DriverManager.GetDriverByPersonId(1025).DriverID == 9, "#4");
-            string name = DrivingLicenseManager.GetLicenseCardInfo(36).FullName;
+            string name = DrivingLicenseManager.GetLicenseCardInfoByAppId(36).FullName;
             CustomAssert.That(name == "Ghassen Houcine Faidi", "#5");
             MessageBox.Show("All tests pass");
 

@@ -91,5 +91,15 @@ namespace Winform_UI
             new AddInternationalDrivingLicenseForm(UserId).ShowDialog();
 
         }
+
+        private void renewDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new RenewLocalDrivingLicenseForm(UserId).ShowDialog();
+        }
+
+        private void internationalLicenseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new ListInternationalLicenseForm(UserId).ShowDialog();
+        }
     }
 }
