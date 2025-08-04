@@ -23,6 +23,11 @@ namespace DVLVBusinessLayer
         {
             return LocalDLApplicationData.GetApplicationIdByLocalId(localAppId);
         }
+        public static int GetLocalIdByApplicationId(int appId)
+        {
+            return LocalDLApplicationData.GetLocalIdByApplicationId(appId);
+        }
+
         public static List<LocalManageDLApplication> GetApplications()
         {
             List<LocalManageDLApplication> rows = new List<LocalManageDLApplication>();
