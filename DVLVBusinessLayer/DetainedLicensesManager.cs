@@ -21,7 +21,7 @@ namespace DVLVBusinessLayer
         {
             List<DetainedRecord> listOfDetaiendLicenses = new List<DetainedRecord>();
             return DetainedLicensesData.GetRecordsDataTable()
-                .Rows.Cast<DataRow>().Select(row => RowToDetainedRecord(row)).ToList();
+                .Rows.Cast<DataRow>().Select(RowToDetainedRecord).ToList();
         }
         private static DetainedRecord RowToDetainedRecord(DataRow row)
         {
@@ -50,6 +50,32 @@ namespace DVLVBusinessLayer
                 nationalNumber: row["NationalNo"].ToString(),
                 fullName: row["FullName"].ToString(),
                 driverID: Convert.ToInt32(row["DriverId"]));
+        }
+
+
+
+        /// <summary>
+        /// Returns an integer representing the detainID
+        /// </summary>
+        public static int? DetainLicense(
+            int licenseId,
+            DateTime detainDate,
+            decimal fineAmount,
+            int userId,
+            bool isReleased)
+        {
+            return DetainedLicensesData.DetainLicense(licenseId, fineAmount, userId);
+        }
+
+        public static DetainedRecord GetDetainedRecordByLicenseId(int licenseID)
+        {
+            return RowToDetainedRecord(DetainedLicensesData
+                .GetDetainedRecordByLicenseId(licenseID));
+        }
+
+        public static int? ReleaseLicense(int LicenseID, int UserId)
+        {
+            return DetainedLicensesData.ReleaseLicense(LicenseID, UserId);
         }
     }
 }

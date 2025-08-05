@@ -58,6 +58,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DetainInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DetainInfo.Designer.cs">
+      <DependentUpon>DetainInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DrivingLicenseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="Controls\LicensesHistory.Designer.cs">
       <DependentUpon>LicensesHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReleaseDetainedApplication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReleaseDetainedApplication.Designer.cs">
+      <DependentUpon>ReleaseDetainedApplication.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ReplaceLostDamagedApplicationForm.cs">
       <SubType>UserControl</SubType>
@@ -319,6 +331,9 @@
     <Compile Include="UpdateTestTypeForm.Designer.cs">
       <DependentUpon>UpdateTestTypeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\DetainInfo.resx">
+      <DependentUpon>DetainInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DrivingLicenseControl.resx">
       <DependentUpon>DrivingLicenseControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -330,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LicensesHistory.resx">
       <DependentUpon>LicensesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReleaseDetainedApplication.resx">
+      <DependentUpon>ReleaseDetainedApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ReplaceLostDamagedApplicationForm.resx">
       <DependentUpon>ReplaceLostDamagedApplicationForm.cs</DependentUpon>

@@ -111,9 +111,9 @@ namespace Winform_UI
                     => new ManageDetainedLicenseForm().ShowDialog();
 
         private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
-                    => new DetainLicenseForm().ShowDialog();
+                    => new DetainLicenseForm(UserId).ShowDialog();
 
         private void releaseLicenseToolStripMenuItem_Click(object sender, EventArgs e)
-                    => new ReleaseLicenseForm().ShowDialog();
+                    => new ReleaseLicenseForm(UserId).ShowDialog();
     }
 }

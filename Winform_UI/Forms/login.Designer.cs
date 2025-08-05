@@ -44,6 +44,7 @@
             // 
             this.tbUsername.AutoRoundedCorners = true;
             this.tbUsername.BorderRadius = 26;
+            this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbUsername.DefaultText = "";
             this.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -69,6 +70,7 @@
             // 
             this.tbPassword.AutoRoundedCorners = true;
             this.tbPassword.BorderRadius = 29;
+            this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbPassword.DefaultText = "";
             this.tbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -166,6 +168,7 @@
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 495);
