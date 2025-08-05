@@ -100,9 +100,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(867, 64);
+            this.pictureBox1.Location = new System.Drawing.Point(882, 49);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 164);
+            this.pictureBox1.Size = new System.Drawing.Size(145, 154);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -113,7 +113,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(494, 222);
+            this.label9.Location = new System.Drawing.Point(540, 221);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(162, 30);
             this.label9.TabIndex = 1;
@@ -125,7 +125,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(502, 393);
+            this.label15.Location = new System.Drawing.Point(548, 392);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(154, 30);
             this.label15.TabIndex = 1;
@@ -137,7 +137,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(464, 336);
+            this.label14.Location = new System.Drawing.Point(510, 335);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(192, 30);
             this.label14.TabIndex = 1;
@@ -149,7 +149,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(538, 279);
+            this.label8.Location = new System.Drawing.Point(584, 278);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 30);
             this.label8.TabIndex = 1;
@@ -161,7 +161,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Montserrat SemiBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(536, 165);
+            this.label7.Location = new System.Drawing.Point(582, 164);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 30);
             this.label7.TabIndex = 1;
@@ -173,7 +173,7 @@
             this.labelIsDetained.BackColor = System.Drawing.Color.Transparent;
             this.labelIsDetained.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIsDetained.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelIsDetained.Location = new System.Drawing.Point(674, 393);
+            this.labelIsDetained.Location = new System.Drawing.Point(720, 392);
             this.labelIsDetained.Name = "labelIsDetained";
             this.labelIsDetained.Size = new System.Drawing.Size(42, 30);
             this.labelIsDetained.TabIndex = 0;
@@ -185,7 +185,7 @@
             this.labelExpDate.BackColor = System.Drawing.Color.Transparent;
             this.labelExpDate.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelExpDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExpDate.Location = new System.Drawing.Point(674, 336);
+            this.labelExpDate.Location = new System.Drawing.Point(720, 335);
             this.labelExpDate.Name = "labelExpDate";
             this.labelExpDate.Size = new System.Drawing.Size(42, 30);
             this.labelExpDate.TabIndex = 0;
@@ -197,7 +197,7 @@
             this.labelDriverID.BackColor = System.Drawing.Color.Transparent;
             this.labelDriverID.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDriverID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelDriverID.Location = new System.Drawing.Point(674, 279);
+            this.labelDriverID.Location = new System.Drawing.Point(720, 278);
             this.labelDriverID.Name = "labelDriverID";
             this.labelDriverID.Size = new System.Drawing.Size(42, 30);
             this.labelDriverID.TabIndex = 0;
@@ -209,7 +209,7 @@
             this.labelDateOfBirth.BackColor = System.Drawing.Color.Transparent;
             this.labelDateOfBirth.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDateOfBirth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelDateOfBirth.Location = new System.Drawing.Point(674, 222);
+            this.labelDateOfBirth.Location = new System.Drawing.Point(720, 221);
             this.labelDateOfBirth.Name = "labelDateOfBirth";
             this.labelDateOfBirth.Size = new System.Drawing.Size(42, 30);
             this.labelDateOfBirth.TabIndex = 0;
@@ -221,7 +221,7 @@
             this.labelIsActive.BackColor = System.Drawing.Color.Transparent;
             this.labelIsActive.Font = new System.Drawing.Font("Montserrat", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIsActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelIsActive.Location = new System.Drawing.Point(674, 165);
+            this.labelIsActive.Location = new System.Drawing.Point(720, 164);
             this.labelIsActive.Name = "labelIsActive";
             this.labelIsActive.Size = new System.Drawing.Size(42, 30);
             this.labelIsActive.TabIndex = 0;

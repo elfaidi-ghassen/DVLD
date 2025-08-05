@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Winform_UI.Debug;
 using Winform_UI.Forms;
+using Winform_UI.Forms.DetainedLicenses;
 using Winform_UI.Forms.Driver;
 using Winform_UI.Forms.DrivingLicense;
 using Winform_UI.Forms.InternationalLicense;
@@ -105,5 +106,14 @@ namespace Winform_UI
         {
             new ReplaceLostDamagedForm(UserId).ShowDialog();
         }
+
+        private void manageDetainedLicensesToolStripMenuItem_Click(object sender, EventArgs e)
+                    => new ManageDetainedLicenseForm().ShowDialog();
+
+        private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+                    => new DetainLicenseForm(UserId).ShowDialog();
+
+        private void releaseLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+                    => new ReleaseLicenseForm(UserId).ShowDialog();
     }
 }

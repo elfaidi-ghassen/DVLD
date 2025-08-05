@@ -58,11 +58,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DetainInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DetainInfo.Designer.cs">
+      <DependentUpon>DetainInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DrivingLicenseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\DrivingLicenseControl.Designer.cs">
       <DependentUpon>DrivingLicenseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilterBox.Designer.cs">
+      <DependentUpon>FilterBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\InternationalApplicationInfo.cs">
       <SubType>UserControl</SubType>
@@ -75,6 +87,12 @@
     </Compile>
     <Compile Include="Controls\LicensesHistory.Designer.cs">
       <DependentUpon>LicensesHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReleaseDetainedApplication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReleaseDetainedApplication.Designer.cs">
+      <DependentUpon>ReleaseDetainedApplication.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ReplaceLostDamagedApplicationForm.cs">
       <SubType>UserControl</SubType>
@@ -118,6 +136,18 @@
     </Compile>
     <Compile Include="Controls\UserChoosePerson.Designer.cs">
       <DependentUpon>UserChoosePerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DetainedLicenses\DetainLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetainedLicenses\DetainLicenseForm.Designer.cs">
+      <DependentUpon>DetainLicenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DetainedLicenses\ReleaseLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetainedLicenses\ReleaseLicenseForm.Designer.cs">
+      <DependentUpon>ReleaseLicenseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Driver\ManageDriversForm.cs">
       <SubType>Form</SubType>
@@ -221,6 +251,12 @@
     <Compile Include="Forms\InternationalLicense\ShowInternationalLicenseForm.Designer.cs">
       <DependentUpon>ShowInternationalLicenseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DetainedLicenses\ManageDetainedLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetainedLicenses\ManageDetainedLicenseForm.Designer.cs">
+      <DependentUpon>ManageDetainedLicenseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\User\AddUpdateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,14 +331,23 @@
     <Compile Include="UpdateTestTypeForm.Designer.cs">
       <DependentUpon>UpdateTestTypeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\DetainInfo.resx">
+      <DependentUpon>DetainInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DrivingLicenseControl.resx">
       <DependentUpon>DrivingLicenseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterBox.resx">
+      <DependentUpon>FilterBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\InternationalApplicationInfo.resx">
       <DependentUpon>InternationalApplicationInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LicensesHistory.resx">
       <DependentUpon>LicensesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReleaseDetainedApplication.resx">
+      <DependentUpon>ReleaseDetainedApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ReplaceLostDamagedApplicationForm.resx">
       <DependentUpon>ReplaceLostDamagedApplicationForm.cs</DependentUpon>
@@ -324,6 +369,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UserChoosePerson.resx">
       <DependentUpon>UserChoosePerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetainedLicenses\DetainLicenseForm.resx">
+      <DependentUpon>DetainLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetainedLicenses\ReleaseLicenseForm.resx">
+      <DependentUpon>ReleaseLicenseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Driver\ManageDriversForm.resx">
       <DependentUpon>ManageDriversForm.cs</DependentUpon>
@@ -375,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InternationalLicense\ShowInternationalLicenseForm.resx">
       <DependentUpon>ShowInternationalLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetainedLicenses\ManageDetainedLicenseForm.resx">
+      <DependentUpon>ManageDetainedLicenseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Person\AddUpdatePerson.resx">
       <DependentUpon>AddUpdatePerson.cs</DependentUpon>
