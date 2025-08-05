@@ -36,18 +36,18 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.filterCombo = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showPersonDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelCountRecords = new System.Windows.Forms.Label();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvData = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.viewLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showPersonDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.filterNumber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
             // filterNumber
@@ -122,6 +122,45 @@
             this.filterCombo.Size = new System.Drawing.Size(249, 36);
             this.filterCombo.TabIndex = 29;
             this.filterCombo.SelectedIndexChanged += new System.EventHandler(this.filterCombo_SelectedIndexChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem,
+            this.viewLicenseToolStripMenuItem,
+            this.viewLicenseHistoryToolStripMenuItem,
+            this.showPersonDetailsToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(257, 132);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(256, 32);
+            this.refreshToolStripMenuItem.Text = "Refresh ";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
+            // viewLicenseToolStripMenuItem
+            // 
+            this.viewLicenseToolStripMenuItem.Name = "viewLicenseToolStripMenuItem";
+            this.viewLicenseToolStripMenuItem.Size = new System.Drawing.Size(256, 32);
+            this.viewLicenseToolStripMenuItem.Text = "View License";
+            this.viewLicenseToolStripMenuItem.Click += new System.EventHandler(this.viewLicenseToolStripMenuItem_Click);
+            // 
+            // viewLicenseHistoryToolStripMenuItem
+            // 
+            this.viewLicenseHistoryToolStripMenuItem.Name = "viewLicenseHistoryToolStripMenuItem";
+            this.viewLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(256, 32);
+            this.viewLicenseHistoryToolStripMenuItem.Text = "View License History";
+            this.viewLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.viewLicenseHistoryToolStripMenuItem_Click);
+            // 
+            // showPersonDetailsToolStripMenuItem
+            // 
+            this.showPersonDetailsToolStripMenuItem.Name = "showPersonDetailsToolStripMenuItem";
+            this.showPersonDetailsToolStripMenuItem.Size = new System.Drawing.Size(256, 32);
+            this.showPersonDetailsToolStripMenuItem.Text = "Show person details";
+            this.showPersonDetailsToolStripMenuItem.Click += new System.EventHandler(this.showPersonDetailsToolStripMenuItem_Click);
             // 
             // labelCountRecords
             // 
@@ -222,45 +261,6 @@
             this.dgvData.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvData.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refreshToolStripMenuItem,
-            this.viewLicenseToolStripMenuItem,
-            this.viewLicenseHistoryToolStripMenuItem,
-            this.showPersonDetailsToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(257, 165);
-            // 
-            // viewLicenseToolStripMenuItem
-            // 
-            this.viewLicenseToolStripMenuItem.Name = "viewLicenseToolStripMenuItem";
-            this.viewLicenseToolStripMenuItem.Size = new System.Drawing.Size(256, 32);
-            this.viewLicenseToolStripMenuItem.Text = "View License";
-            this.viewLicenseToolStripMenuItem.Click += new System.EventHandler(this.viewLicenseToolStripMenuItem_Click);
-            // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(256, 32);
-            this.refreshToolStripMenuItem.Text = "Refresh ";
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
-            // 
-            // viewLicenseHistoryToolStripMenuItem
-            // 
-            this.viewLicenseHistoryToolStripMenuItem.Name = "viewLicenseHistoryToolStripMenuItem";
-            this.viewLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(256, 32);
-            this.viewLicenseHistoryToolStripMenuItem.Text = "View License History";
-            this.viewLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.viewLicenseHistoryToolStripMenuItem_Click);
-            // 
-            // showPersonDetailsToolStripMenuItem
-            // 
-            this.showPersonDetailsToolStripMenuItem.Name = "showPersonDetailsToolStripMenuItem";
-            this.showPersonDetailsToolStripMenuItem.Size = new System.Drawing.Size(256, 32);
-            this.showPersonDetailsToolStripMenuItem.Text = "Show person details";
-            this.showPersonDetailsToolStripMenuItem.Click += new System.EventHandler(this.showPersonDetailsToolStripMenuItem_Click);
-            // 
             // ListInternationalLicenseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -278,8 +278,8 @@
             this.Text = "ListInternationalLicenseForm";
             this.Load += new System.EventHandler(this.ListInternationalLicenseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.filterNumber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

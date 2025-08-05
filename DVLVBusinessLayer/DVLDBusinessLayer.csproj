@@ -46,6 +46,7 @@
     <Compile Include="AppointmentManager.cs" />
     <Compile Include="BusinessLayer.cs" />
     <Compile Include="CountryManager.cs" />
+    <Compile Include="DetainedLicensesManager.cs" />
     <Compile Include="DriverManager.cs" />
     <Compile Include="DrivingLicenseManager.cs" />
     <Compile Include="DrivingTestData.cs" />

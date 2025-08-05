@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,9 +47,16 @@
     <Compile Include="ApplicationInfo.cs" />
     <Compile Include="ApplicationType.cs" />
     <Compile Include="DataEnums.cs" />
+    <Compile Include="DetainedRecord.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="DriverView.cs" />
     <Compile Include="DrivingLicenseCard.cs" />
+    <Compile Include="FilterBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FilterBox.Designer.cs">
+      <DependentUpon>FilterBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="InternationalDrivingLicenseCard.cs" />
     <Compile Include="PasswordHasher.cs" />
     <Compile Include="TestAppointment.cs" />
@@ -62,6 +71,11 @@
     <Compile Include="Settings.cs" />
     <Compile Include="TestType.cs" />
     <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FilterBox.resx">
+      <DependentUpon>FilterBox.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
