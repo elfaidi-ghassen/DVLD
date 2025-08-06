@@ -34,10 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvData = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.labelRecordsCount = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelRecordsCount = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.filterBox1 = new Util.FilterBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +48,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Montserrat SemiBold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(46)))), ((int)(((byte)(53)))));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(329, 26);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(353, 12);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(295, 52);
             this.guna2HtmlLabel2.TabIndex = 8;
@@ -115,6 +116,21 @@
             this.dgvData.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvData.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewLicenseHistoryToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(257, 36);
+            // 
+            // viewLicenseHistoryToolStripMenuItem
+            // 
+            this.viewLicenseHistoryToolStripMenuItem.Name = "viewLicenseHistoryToolStripMenuItem";
+            this.viewLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(256, 32);
+            this.viewLicenseHistoryToolStripMenuItem.Text = "View License History";
+            this.viewLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.viewLicenseHistoryToolStripMenuItem_Click);
+            // 
             // labelRecordsCount
             // 
             this.labelRecordsCount.BackColor = System.Drawing.Color.Transparent;
@@ -142,26 +158,19 @@
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // contextMenuStrip1
+            // filterBox1
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewLicenseHistoryToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(257, 69);
-            // 
-            // viewLicenseHistoryToolStripMenuItem
-            // 
-            this.viewLicenseHistoryToolStripMenuItem.Name = "viewLicenseHistoryToolStripMenuItem";
-            this.viewLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(256, 32);
-            this.viewLicenseHistoryToolStripMenuItem.Text = "View License History";
-            this.viewLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.viewLicenseHistoryToolStripMenuItem_Click);
+            this.filterBox1.Location = new System.Drawing.Point(12, 71);
+            this.filterBox1.Name = "filterBox1";
+            this.filterBox1.Size = new System.Drawing.Size(645, 56);
+            this.filterBox1.TabIndex = 13;
             // 
             // ManageDriversForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 566);
+            this.Controls.Add(this.filterBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.labelRecordsCount);
             this.Controls.Add(this.dgvData);
@@ -184,5 +193,6 @@
         private Guna.UI2.WinForms.Guna2Button btnClose;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem viewLicenseHistoryToolStripMenuItem;
+        private Util.FilterBox filterBox1;
     }
 }

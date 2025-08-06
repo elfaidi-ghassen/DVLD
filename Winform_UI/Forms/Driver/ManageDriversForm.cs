@@ -16,16 +16,38 @@ namespace Winform_UI.Forms.Driver
 {
     public partial class ManageDriversForm : Form
     {
+        List<DriverView> driversCache = new List<DriverView>();
         public ManageDriversForm()
         {
             InitializeComponent();
+        }
+        public void FilterBy(Func<DriverView, bool> pred)
+        {
+            DisplayDrivers(driversCache.Where(pred).ToList());
+            UpdateRowCount();
         }
 
         private void ManageDriversForm_Load(object sender, EventArgs e)
         {
             InitializeColumns();
             LoadDrivers();
+            DisplayDrivers(driversCache);
             UpdateRowCount();
+            filterBox1.AddTextFilterOption(
+                "Full Name",
+                (name) => FilterBy(dv => dv.FullName.Contains(name)));
+            
+            filterBox1.AddTextFilterOption(
+                "National No",
+                (name) => FilterBy(dv => dv.NationalNo.Contains(name)));
+            
+            filterBox1.AddNumberFilterOption(
+                "Driver ID",
+                (number) => FilterBy(dv => dv.DriverID == number));
+
+            filterBox1.AddResetFilterOption(
+                () => FilterBy(_ => true));
+
         }
         private void UpdateRowCount()
         {
@@ -41,12 +63,16 @@ namespace Winform_UI.Forms.Driver
             dgvData.Columns.Add("col6", "Active Licenses");
         }
 
+        
+
+
         private void LoadDrivers()
         {
-            LoadDrivers(DriverManager.GetDriversViewList());
+            driversCache = DriverManager.GetDriversViewList();
         }
-        private void LoadDrivers(List<DriverView> drivers) 
+        private void DisplayDrivers(List<DriverView> drivers) 
         {
+            dgvData.Rows.Clear();
             foreach (DriverView driver in drivers)
             {
                 dgvData.Rows.Add(

@@ -33,6 +33,7 @@ namespace DataAccessLayer
                             ON [People].[PersonID] = [Drivers].[PersonID]          
                         JOIN [Licenses]
                         ON [Licenses].[DriverID] = [Drivers].[DriverID]
+                        WHERE Licenses.IsActive = 1
                     GROUP BY Licenses.DriverID, [People].[PersonID], NationalNo, Drivers.CreatedByUserID, CONCAT_WS(' ',
                                 FirstName,
                                 SecondName,
