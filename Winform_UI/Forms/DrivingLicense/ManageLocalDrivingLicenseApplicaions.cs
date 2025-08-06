@@ -134,6 +134,12 @@ namespace Winform_UI.Forms.DrivingLicense
 
             foreach (LocalManageDLApplication localApp in applications)
             {
+                // if it's a renew application:
+                if (localApp.PassedTests == 0 && 
+                    (enApplicationStatus)localApp.Status == enApplicationStatus.Completed)
+                {
+                    continue;
+                }
                 dgvData.Rows.Add(
                     localApp.LocalApplicationID,
                     localApp.DrivingLicenseClassTitle,

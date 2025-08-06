@@ -201,7 +201,7 @@ namespace DataAccessLayer
                                         = LD.LocalDrivingLicenseApplicationID
                         LEFT JOIN Tests
                             ON TestAppointments.TestAppointmentID = Tests.TestAppointmentID
-
+                        
                         GROUP BY 
                             LD.LocalDrivingLicenseApplicationID,
                             LD.LicenseClassID, 
